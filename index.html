@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button onclick="toggleLanguage()" class="lang-btn">
+            <i class="fas fa-language"></i>
+            <span class="lang-text" data-en="فارسی" data-fa="English">فارسی</span>
+        </button>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="profile.jpg" alt="Profile Picture" id="profileImg">
+                </div>
+                <div class="profile-info">
+                    <h1 class="name" data-en="Mohammad Beza Zarei" data-fa="محمد بذا زارعی">Mohammad Beza Zarei</h1>
+                    <p class="title" data-en="Product Manager" data-fa="مدیر محصول">Product Manager</p>
+                    <p class="bio" data-en="Passionate about creating innovative products that solve real-world problems" data-fa="علاقه‌مند به خلق محصولات نوآورانه که مشکلات واقعی را حل می‌کنند">Passionate about creating innovative products that solve real-world problems</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2 class="section-title" data-en="Contact Information" data-fa="اطلاعات تماس">Contact Information</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="contact-info">
+                        <span class="contact-label" data-en="Phone" data-fa="تلفن">Phone</span>
+                        <a href="tel:09354717548" class="contact-value">۰۹۳۵۴۷۱۷۵۴۸</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-info">
+                        <span class="contact-label" data-en="Email" data-fa="ایمیل">Email</span>
+                        <a href="mailto:mbz1372@gmail.com" class="contact-value">mbz1372@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section">
+            <h2 class="section-title" data-en="Core Expertise" data-fa="تخصص‌های اصلی">Core Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3 data-en="Product Management" data-fa="مدیریت محصول">Product Management</h3>
+                    <p data-en="Strategic product planning and execution" data-fa="برنامه‌ریزی و اجرای استراتژیک محصول">Strategic product planning and execution</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-users"></i>
+                    <h3 data-en="Team Leadership" data-fa="رهبری تیم">Team Leadership</h3>
+                    <p data-en="Leading cross-functional teams" data-fa="رهبری تیم‌های متقابل">Leading cross-functional teams</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3 data-en="Data Analysis" data-fa="تحلیل داده">Data Analysis</h3>
+                    <p data-en="Making data-driven decisions" data-fa="تصمیم‌گیری بر اساس داده">Making data-driven decisions</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3 data-en="Innovation" data-fa="نوآوری">Innovation</h3>
+                    <p data-en="Creative problem solving" data-fa="حل خلاقانه مسائل">Creative problem solving</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Links -->
+        <section class="social-section">
+            <h2 class="section-title" data-en="Connect With Me" data-fa="با من در ارتباط باشید">Connect With Me</h2>
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span data-en="LinkedIn" data-fa="لینکدین">LinkedIn</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-github"></i>
+                    <span data-en="GitHub" data-fa="گیت‌هاب">GitHub</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                    <span data-en="Twitter" data-fa="توییتر">Twitter</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
