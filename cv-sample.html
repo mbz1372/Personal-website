@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رزومه - محمدباقر ذوالفقاری</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Tahoma', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            padding: 20px;
+            direction: rtl;
+        }
+        
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            font-size: 1.5rem;
+            color: #2563eb;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .experience-item,
+        .education-item {
+            margin-bottom: 25px;
+            border-right: 3px solid #e5e7eb;
+            padding-right: 15px;
+        }
+        
+        .experience-item h3,
+        .education-item h3 {
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+        
+        .company,
+        .institution {
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .duration {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category h3 {
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 5px 0;
+            position: relative;
+            padding-right: 15px;
+        }
+        
+        .skill-list li::before {
+            content: "•";
+            color: #2563eb;
+            position: absolute;
+            right: 0;
+        }
+        
+        .languages {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .language-item {
+            text-align: center;
+        }
+        
+        .language-level {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: bold;
+            color: #2563eb;
+            border: 3px solid #2563eb;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>محمدباقر ذوالفقاری</h1>
+            <div class="title">توسعه‌دهنده نرم‌افزار و متخصص فناوری اطلاعات</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>mb.zolfaghari@example.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+98 912 345 6789</span>
+                </div>
+                <div class="contact-item">
+                    <span>🌐</span>
+                    <span>linkedin.com/in/mbzolfaghari</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>تهران، ایران</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Summary -->
+            <div class="section">
+                <h2>خلاصه</h2>
+                <p>
+                    توسعه‌دهنده نرم‌افزار با بیش از 5 سال تجربه در طراحی و توسعه سیستم‌های وب و موبایل. 
+                    تخصص در تکنولوژی‌های مدرن و علاقه‌مند به یادگیری فناوری‌های نوین. 
+                    تجربه کار در تیم‌های چابک و مدیریت پروژه‌های پیچیده.
+                </p>
+            </div>
+
+            <!-- Experience -->
+            <div class="section">
+                <h2>تجربه کاری</h2>
+                
+                <div class="experience-item">
+                    <h3>توسعه‌دهنده ارشد نرم‌افزار</h3>
+                    <div class="company">شرکت فناوری پیشرو</div>
+                    <div class="duration">1400 - تاکنون (3 سال)</div>
+                    <ul>
+                        <li>طراحی و توسعه سیستم‌های وب مقیاس‌پذیر با استفاده از React و Node.js</li>
+                        <li>همکاری با تیم‌های محصول برای تعریف و پیاده‌سازی ویژگی‌های جدید</li>
+                        <li>بهینه‌سازی عملکرد اپلیکیشن‌ها و کاهش زمان بارگیری تا 40%</li>
+                        <li>راهبری و آموزش توسعه‌دهندگان جونیور</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>توسعه‌دهنده Front-End</h3>
+                    <div class="company">استودیو طراحی دیجیتال</div>
+                    <div class="duration">1398 - 1400 (2 سال)</div>
+                    <ul>
+                        <li>توسعه رابط‌های کاربری ریسپانسیو با HTML5، CSS3 و JavaScript</li>
+                        <li>همکاری با طراحان UX/UI برای پیاده‌سازی طرح‌های خلاقانه</li>
+                        <li>پیاده‌سازی سیستم‌های مدیریت محتوا (CMS) سفارشی</li>
+                        <li>بهبود تجربه کاربری و افزایش نرخ تبدیل</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>برنامه‌نویس جونیور</h3>
+                    <div class="company">شرکت نرم‌افزاری نوآور</div>
+                    <div class="duration">1396 - 1398 (2 سال)</div>
+                    <ul>
+                        <li>توسعه اپلیکیشن‌های وب با استفاده از PHP و MySQL</li>
+                        <li>نگهداری و به‌روزرسانی سیستم‌های موجود</li>
+                        <li>تست و عیب‌یابی کدها</li>
+                        <li>مستندسازی کدها و فرآیندها</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="section">
+                <h2>تحصیلات</h2>
+                
+                <div class="education-item">
+                    <h3>کارشناسی ارشد مهندسی کامپیوتر</h3>
+                    <div class="institution">دانشگاه صنعتی شریف</div>
+                    <div class="duration">1394 - 1396</div>
+                    <p>گرایش: مهندسی نرم‌افزار | معدل: 17.5</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>کارشناسی مهندسی کامپیوتر</h3>
+                    <div class="institution">دانشگاه تهران</div>
+                    <div class="duration">1390 - 1394</div>
+                    <p>گرایش: نرم‌افزار | معدل: 16.8</p>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="section">
+                <h2>مهارت‌ها</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>زبان‌های برنامه‌نویسی</h3>
+                        <ul class="skill-list">
+                            <li>JavaScript (ES6+)</li>
+                            <li>TypeScript</li>
+                            <li>Python</li>
+                            <li>PHP</li>
+                            <li>Java</li>
+                            <li>C#</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>فریمورک‌ها و کتابخانه‌ها</h3>
+                        <ul class="skill-list">
+                            <li>React.js</li>
+                            <li>Vue.js</li>
+                            <li>Node.js</li>
+                            <li>Express.js</li>
+                            <li>Laravel</li>
+                            <li>Django</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>پایگاه داده</h3>
+                        <ul class="skill-list">
+                            <li>MySQL</li>
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                            <li>Redis</li>
+                            <li>SQLite</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>ابزارها و تکنولوژی‌ها</h3>
+                        <ul class="skill-list">
+                            <li>Git & GitHub</li>
+                            <li>Docker</li>
+                            <li>AWS</li>
+                            <li>Linux</li>
+                            <li>Nginx</li>
+                            <li>CI/CD</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="section">
+                <h2>زبان‌ها</h2>
+                <div class="languages">
+                    <div class="language-item">
+                        <div class="language-level">100%</div>
+                        <div>فارسی<br><small>(مادری)</small></div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-level">85%</div>
+                        <div>انگلیسی<br><small>(پیشرفته)</small></div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-level">60%</div>
+                        <div>عربی<br><small>(متوسط)</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="section">
+                <h2>گواهینامه‌ها</h2>
+                <ul class="skill-list">
+                    <li>گواهینامه AWS Certified Developer - Associate (2023)</li>
+                    <li>گواهینامه Google Cloud Professional (2022)</li>
+                    <li>گواهینامه React Developer Certification (2022)</li>
+                    <li>گواهینامه Scrum Master (2021)</li>
+                </ul>
+            </div>
+
+            <!-- Projects -->
+            <div class="section">
+                <h2>پروژه‌های مهم</h2>
+                
+                <div class="experience-item">
+                    <h3>سیستم مدیریت فروشگاه آنلاین</h3>
+                    <div class="company">پروژه شخصی</div>
+                    <div class="duration">1402</div>
+                    <p>توسعه سیستم کامل فروشگاه آنلاین با React، Node.js و MongoDB شامل پنل مدیریت، سیستم پرداخت و مدیریت موجودی.</p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>اپلیکیشن موبایل مدیریت وظایف</h3>
+                    <div class="company">پروژه تیمی</div>
+                    <div class="duration">1401</div>
+                    <p>طراحی و توسعه اپلیکیشن موبایل برای مدیریت وظایف تیمی با React Native، شامل امکانات همگام‌سازی و اعلان‌های push.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add print functionality
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>
