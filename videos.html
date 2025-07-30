@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos & Tutorials - Mohammad Bagher Zolfaghari</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="videos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-text" data-en="MBZ" data-fa="م.ب.ذ">MBZ</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" data-en="Home" data-fa="خانه">Home</a></li>
+                <li><a href="index.html#about" data-en="About" data-fa="درباره">About</a></li>
+                <li><a href="index.html#experience" data-en="Experience" data-fa="تجربیات">Experience</a></li>
+                <li><a href="index.html#certifications" data-en="Certifications" data-fa="مدارک">Certifications</a></li>
+                <li><a href="articles.html" data-en="Articles" data-fa="مقالات">Articles</a></li>
+                <li><a href="videos.html" class="active" data-en="Videos" data-fa="ویدیوها">Videos</a></li>
+                <li><a href="index.html#contact" data-en="Contact" data-fa="تماس">Contact</a></li>
+                
+                <!-- Language Toggle in Navigation -->
+                <li class="nav-lang-toggle">
+                    <button onclick="toggleLanguage()" class="nav-lang-btn">
+                        <i class="fas fa-globe"></i>
+                        <span class="lang-text" data-en="فا" data-fa="EN">فا</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="videos-hero">
+        <div class="hero-bg">
+            <div class="hero-video-bg">
+                <video autoplay muted loop>
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-en="Video Tutorials & Talks" data-fa="آموزش‌های ویدیویی و سخنرانی‌ها">Video Tutorials & Talks</h1>
+                <p data-en="Learn product management through comprehensive video tutorials, conference talks, and practical case studies" data-fa="مدیریت محصول را از طریق آموزش‌های ویدیویی جامع، سخنرانی‌های کنفرانس و مطالعات موردی عملی یاد بگیرید">
+                    Learn product management through comprehensive video tutorials, conference talks, and practical case studies
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label" data-en="Video Tutorials" data-fa="آموزش ویدیویی">Video Tutorials</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25k+</div>
+                        <div class="stat-label" data-en="Total Views" data-fa="کل بازدید">Total Views</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label" data-en="Hours Content" data-fa="ساعت محتوا">Hours Content</div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openUploadModal()">
+                        <i class="fas fa-video"></i>
+                        <span data-en="Upload Video" data-fa="آپلود ویدیو">Upload Video</span>
+                    </button>
+                    <button class="btn btn-outline" onclick="scrollToPlaylists()">
+                        <i class="fas fa-list"></i>
+                        <span data-en="Browse Playlists" data-fa="مرور فهرست‌ها">Browse Playlists</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Video Section -->
+    <section class="featured-video">
+        <div class="container">
+            <h2 class="section-title" data-en="Featured Video" data-fa="ویدیو ویژه">Featured Video</h2>
+            <div class="featured-content">
+                <div class="video-player-container">
+                    <div class="video-player" id="featuredPlayer">
+                        <img src="https://via.placeholder.com/800x450/0066cc/ffffff?text=Product+Strategy+Masterclass" alt="Featured Video" class="video-thumbnail">
+                        <div class="play-button" onclick="playVideo('featured')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">24:35</div>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3 data-en="Product Strategy Masterclass: From Vision to Execution" data-fa="کلاس استادی استراتژی محصول: از ویژن تا اجرا">Product Strategy Masterclass: From Vision to Execution</h3>
+                    <div class="video-meta">
+                        <span class="video-date"><i class="fas fa-calendar"></i> Jan 20, 2024</span>
+                        <span class="video-views"><i class="fas fa-eye"></i> 5.2k views</span>
+                        <span class="video-likes"><i class="fas fa-thumbs-up"></i> 248 likes</span>
+                    </div>
+                    <p data-en="Join me in this comprehensive masterclass where I break down the essential elements of product strategy, from initial vision creation to successful execution. Perfect for product managers at all levels." data-fa="در این کلاس استادی جامع با من همراه شوید که در آن عناصر اساسی استراتژی محصول را از ایجاد ویژن اولیه تا اجرای موفق تشریح می‌کنم.">
+                        Join me in this comprehensive masterclass where I break down the essential elements of product strategy, from initial vision creation to successful execution. Perfect for product managers at all levels.
+                    </p>
+                    <div class="video-tags">
+                        <span class="tag">Product Strategy</span>
+                        <span class="tag">Masterclass</span>
+                        <span class="tag">Vision</span>
+                        <span class="tag">Execution</span>
+                    </div>
+                    <div class="video-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-play"></i>
+                            <span data-en="Watch Now" data-fa="تماشا کنید">Watch Now</span>
+                        </button>
+                        <button class="btn-icon" onclick="likeVideo(this)" title="Like">
+                            <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <button class="btn-icon" onclick="shareVideo(this)" title="Share">
+                            <i class="fas fa-share"></i>
+                        </button>
+                        <button class="btn-icon" onclick="saveToPlaylist(this)" title="Add to Playlist">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Categories -->
+    <section class="video-categories">
+        <div class="container">
+            <h2 class="section-title" data-en="Video Categories" data-fa="دسته‌بندی ویدیوها">Video Categories</h2>
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all" data-en="All Videos" data-fa="همه ویدیوها">All Videos</button>
+                <button class="category-tab" data-category="tutorials" data-en="Tutorials" data-fa="آموزش‌ها">Tutorials</button>
+                <button class="category-tab" data-category="talks" data-en="Conference Talks" data-fa="سخنرانی‌ها">Conference Talks</button>
+                <button class="category-tab" data-category="interviews" data-en="Interviews" data-fa="مصاحبه‌ها">Interviews</button>
+                <button class="category-tab" data-category="case-studies" data-en="Case Studies" data-fa="مطالعات موردی">Case Studies</button>
+                <button class="category-tab" data-category="webinars" data-en="Webinars" data-fa="وبینارها">Webinars</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Grid -->
+    <section class="videos-grid-section">
+        <div class="container">
+            <div class="videos-grid" id="videosGrid">
+                <!-- Video cards will be populated by JavaScript -->
+            </div>
+            
+            <div class="load-more-section">
+                <button class="btn btn-outline" id="loadMoreVideos">
+                    <i class="fas fa-plus"></i>
+                    <span data-en="Load More Videos" data-fa="بارگیری ویدیوهای بیشتر">Load More Videos</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Playlists Section -->
+    <section class="playlists-section" id="playlists">
+        <div class="container">
+            <h2 class="section-title" data-en="Video Playlists" data-fa="فهرست‌های ویدیویی">Video Playlists</h2>
+            <div class="playlists-grid">
+                <div class="playlist-card">
+                    <div class="playlist-thumbnail">
+                        <img src="https://via.placeholder.com/300x200/0066cc/ffffff?text=Product+Management+Basics" alt="Product Management Basics">
+                        <div class="playlist-overlay">
+                            <div class="video-count">12 videos</div>
+                            <div class="playlist-duration">2h 45m</div>
+                        </div>
+                        <div class="play-all-btn" onclick="playPlaylist('pm-basics')">
+                            <i class="fas fa-play"></i>
+                            <span data-en="Play All" data-fa="پخش همه">Play All</span>
+                        </div>
+                    </div>
+                    <div class="playlist-info">
+                        <h3 data-en="Product Management Basics" data-fa="مبانی مدیریت محصول">Product Management Basics</h3>
+                        <p data-en="Essential concepts and frameworks for new product managers" data-fa="مفاهیم و چارچوب‌های ضروری برای مدیران محصول جدید">Essential concepts and frameworks for new product managers</p>
+                        <div class="playlist-meta">
+                            <span><i class="fas fa-video"></i> 12 videos</span>
+                            <span><i class="fas fa-clock"></i> 2h 45m</span>
+                            <span><i class="fas fa-eye"></i> 8.5k views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="playlist-thumbnail">
+                        <img src="https://via.placeholder.com/300x200/10b981/ffffff?text=Agile+%26+Scrum" alt="Agile & Scrum Mastery">
+                        <div class="playlist-overlay">
+                            <div class="video-count">8 videos</div>
+                            <div class="playlist-duration">1h 30m</div>
+                        </div>
+                        <div class="play-all-btn" onclick="playPlaylist('agile-scrum')">
+                            <i class="fas fa-play"></i>
+                            <span data-en="Play All" data-fa="پخش همه">Play All</span>
+                        </div>
+                    </div>
+                    <div class="playlist-info">
+                        <h3 data-en="Agile & Scrum Mastery" data-fa="تسلط بر چابک و اسکرام">Agile & Scrum Mastery</h3>
+                        <p data-en="Deep dive into Agile methodologies and Scrum framework" data-fa="شیرجه عمیق در روش‌شناسی‌های چابک و چارچوب اسکرام">Deep dive into Agile methodologies and Scrum framework</p>
+                        <div class="playlist-meta">
+                            <span><i class="fas fa-video"></i> 8 videos</span>
+                            <span><i class="fas fa-clock"></i> 1h 30m</span>
+                            <span><i class="fas fa-eye"></i> 6.2k views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="playlist-thumbnail">
+                        <img src="https://via.placeholder.com/300x200/8b5cf6/ffffff?text=User+Research" alt="User Research & Analytics">
+                        <div class="playlist-overlay">
+                            <div class="video-count">15 videos</div>
+                            <div class="playlist-duration">3h 20m</div>
+                        </div>
+                        <div class="play-all-btn" onclick="playPlaylist('user-research')">
+                            <i class="fas fa-play"></i>
+                            <span data-en="Play All" data-fa="پخش همه">Play All</span>
+                        </div>
+                    </div>
+                    <div class="playlist-info">
+                        <h3 data-en="User Research & Analytics" data-fa="تحقیق کاربر و آنالیتیک">User Research & Analytics</h3>
+                        <p data-en="Learn to conduct effective user research and analyze data" data-fa="یاد بگیرید تحقیق کاربر مؤثر انجام دهید و داده‌ها را تحلیل کنید">Learn to conduct effective user research and analyze data</p>
+                        <div class="playlist-meta">
+                            <span><i class="fas fa-video"></i> 15 videos</span>
+                            <span><i class="fas fa-clock"></i> 3h 20m</span>
+                            <span><i class="fas fa-eye"></i> 12.1k views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="playlist-thumbnail">
+                        <img src="https://via.placeholder.com/300x200/f59e0b/ffffff?text=Leadership" alt="Product Leadership">
+                        <div class="playlist-overlay">
+                            <div class="video-count">10 videos</div>
+                            <div class="playlist-duration">2h 15m</div>
+                        </div>
+                        <div class="play-all-btn" onclick="playPlaylist('leadership')">
+                            <i class="fas fa-play"></i>
+                            <span data-en="Play All" data-fa="پخش همه">Play All</span>
+                        </div>
+                    </div>
+                    <div class="playlist-info">
+                        <h3 data-en="Product Leadership" data-fa="رهبری محصول">Product Leadership</h3>
+                        <p data-en="Advanced leadership skills for senior product managers" data-fa="مهارت‌های رهبری پیشرفته برای مدیران ارشد محصول">Advanced leadership skills for senior product managers</p>
+                        <div class="playlist-meta">
+                            <span><i class="fas fa-video"></i> 10 videos</span>
+                            <span><i class="fas fa-clock"></i> 2h 15m</span>
+                            <span><i class="fas fa-eye"></i> 9.8k views</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Modal -->
+    <div class="modal" id="uploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-en="Upload New Video" data-fa="آپلود ویدیو جدید">Upload New Video</h2>
+                <button class="modal-close" onclick="closeUploadModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="upload-form" id="videoUploadForm">
+                <div class="form-group">
+                    <label data-en="Video Title" data-fa="عنوان ویدیو">Video Title</label>
+                    <input type="text" id="videoTitle" required placeholder="Enter video title..." data-placeholder-en="Enter video title..." data-placeholder-fa="عنوان ویدیو را وارد کنید...">
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Description" data-fa="توضیحات">Description</label>
+                    <textarea id="videoDescription" required placeholder="Describe your video..." data-placeholder-en="Describe your video..." data-placeholder-fa="ویدیو خود را توضیح دهید..."></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label data-en="Category" data-fa="دسته‌بندی">Category</label>
+                        <select id="videoCategory" required>
+                            <option value="tutorials" data-en="Tutorial" data-fa="آموزش">Tutorial</option>
+                            <option value="talks" data-en="Conference Talk" data-fa="سخنرانی">Conference Talk</option>
+                            <option value="interviews" data-en="Interview" data-fa="مصاحبه">Interview</option>
+                            <option value="case-studies" data-en="Case Study" data-fa="مطالعه موردی">Case Study</option>
+                            <option value="webinars" data-en="Webinar" data-fa="وبینار">Webinar</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-en="Duration" data-fa="مدت زمان">Duration</label>
+                        <input type="text" id="videoDuration" placeholder="e.g., 15:30" data-placeholder-en="e.g., 15:30" data-placeholder-fa="مثال: ۱۵:۳۰">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Video File" data-fa="فایل ویدیو">Video File</label>
+                    <div class="file-upload">
+                        <input type="file" id="videoFile" accept="video/*">
+                        <label for="videoFile" class="file-upload-label">
+                            <i class="fas fa-video"></i>
+                            <span data-en="Choose Video File" data-fa="انتخاب فایل ویدیو">Choose Video File</span>
+                        </label>
+                    </div>
+                    <div class="upload-progress" id="uploadProgress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <span class="progress-text">0%</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Thumbnail Image" data-fa="تصویر پیش‌نمایش">Thumbnail Image</label>
+                    <div class="file-upload">
+                        <input type="file" id="videoThumbnail" accept="image/*">
+                        <label for="videoThumbnail" class="file-upload-label">
+                            <i class="fas fa-image"></i>
+                            <span data-en="Choose Thumbnail" data-fa="انتخاب تصویر پیش‌نمایش">Choose Thumbnail</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Tags" data-fa="برچسب‌ها">Tags</label>
+                    <input type="text" id="videoTags" placeholder="Enter tags separated by commas..." data-placeholder-en="Enter tags separated by commas..." data-placeholder-fa="برچسب‌ها را با کاما جدا کنید...">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" onclick="closeUploadModal()">
+                        <span data-en="Cancel" data-fa="لغو">Cancel</span>
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-upload"></i>
+                        <span data-en="Upload Video" data-fa="آپلود ویدیو">Upload Video</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <div class="video-modal-header">
+                <h3 id="modalVideoTitle">Video Title</h3>
+                <button class="modal-close" onclick="closeVideoModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="video-modal-player">
+                <iframe id="modalVideoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-modal-info">
+                <div class="video-modal-meta" id="modalVideoMeta"></div>
+                <div class="video-modal-description" id="modalVideoDescription"></div>
+                <div class="video-modal-actions">
+                    <button class="btn-icon" onclick="likeModalVideo()" title="Like">
+                        <i class="fas fa-thumbs-up"></i>
+                    </button>
+                    <button class="btn-icon" onclick="shareModalVideo()" title="Share">
+                        <i class="fas fa-share"></i>
+                    </button>
+                    <button class="btn-icon" onclick="downloadVideo()" title="Download">
+                        <i class="fas fa-download"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>Mohammad Bagher Zolfaghari</h3>
+                    <p data-en="Senior Product Manager passionate about creating digital experiences" data-fa="مدیر ارشد محصول علاقه‌مند به خلق تجربیات دیجیتال">Senior Product Manager passionate about creating digital experiences</p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="index.html" data-en="Home" data-fa="خانه">Home</a>
+                        <a href="articles.html" data-en="Articles" data-fa="مقالات">Articles</a>
+                        <a href="videos.html" data-en="Videos" data-fa="ویدیوها">Videos</a>
+                        <a href="index.html#contact" data-en="Contact" data-fa="تماس">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="© 2024 Mohammad Bagher Zolfaghari. All rights reserved." data-fa="© ۲۰۲۴ محمد باقر ذوالفقاری. تمامی حقوق محفوظ است.">© 2024 Mohammad Bagher Zolfaghari. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="videos.js"></script>
+</body>
+</html>

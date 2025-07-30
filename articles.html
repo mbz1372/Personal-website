@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles & Books - Mohammad Bagher Zolfaghari</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="articles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-text" data-en="MBZ" data-fa="م.ب.ذ">MBZ</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" data-en="Home" data-fa="خانه">Home</a></li>
+                <li><a href="index.html#about" data-en="About" data-fa="درباره">About</a></li>
+                <li><a href="index.html#experience" data-en="Experience" data-fa="تجربیات">Experience</a></li>
+                <li><a href="index.html#certifications" data-en="Certifications" data-fa="مدارک">Certifications</a></li>
+                <li><a href="articles.html" class="active" data-en="Articles" data-fa="مقالات">Articles</a></li>
+                <li><a href="videos.html" data-en="Videos" data-fa="ویدیوها">Videos</a></li>
+                <li><a href="index.html#contact" data-en="Contact" data-fa="تماس">Contact</a></li>
+                
+                <!-- Language Toggle in Navigation -->
+                <li class="nav-lang-toggle">
+                    <button onclick="toggleLanguage()" class="nav-lang-btn">
+                        <i class="fas fa-globe"></i>
+                        <span class="lang-text" data-en="فا" data-fa="EN">فا</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="articles-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-en="Articles & Books" data-fa="مقالات و کتاب‌ها">Articles & Books</h1>
+                <p data-en="Explore my thoughts, insights, and knowledge sharing on product management, technology, and innovation" data-fa="کاوش در افکار، بینش‌ها و اشتراک دانش من در زمینه مدیریت محصول، فناوری و نوآوری">
+                    Explore my thoughts, insights, and knowledge sharing on product management, technology, and innovation
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openUploadModal()">
+                        <i class="fas fa-plus"></i>
+                        <span data-en="Add New Article" data-fa="افزودن مقاله جدید">Add New Article</span>
+                    </button>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search articles..." data-placeholder-en="Search articles..." data-placeholder-fa="جستجو در مقالات...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all" data-en="All" data-fa="همه">All</button>
+                    <button class="filter-tab" data-filter="articles" data-en="Articles" data-fa="مقالات">Articles</button>
+                    <button class="filter-tab" data-filter="books" data-en="Books" data-fa="کتاب‌ها">Books</button>
+                    <button class="filter-tab" data-filter="research" data-en="Research" data-fa="تحقیقات">Research</button>
+                    <button class="filter-tab" data-filter="tutorials" data-en="Tutorials" data-fa="آموزش‌ها">Tutorials</button>
+                </div>
+                <div class="sort-controls">
+                    <select id="sortSelect">
+                        <option value="newest" data-en="Newest First" data-fa="جدیدترین">Newest First</option>
+                        <option value="oldest" data-en="Oldest First" data-fa="قدیمی‌ترین">Oldest First</option>
+                        <option value="title" data-en="Title A-Z" data-fa="عنوان الف-ی">Title A-Z</option>
+                        <option value="popular" data-en="Most Popular" data-fa="محبوب‌ترین">Most Popular</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="articles-grid-section">
+        <div class="container">
+            <div class="articles-grid" id="articlesGrid">
+                <!-- Sample Articles -->
+                <article class="article-card" data-category="articles" data-date="2024-01-15">
+                    <div class="article-image">
+                        <img src="https://via.placeholder.com/400x250/0066cc/ffffff?text=Product+Strategy" alt="Product Strategy Guide">
+                        <div class="article-category">
+                            <span data-en="Article" data-fa="مقاله">Article</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 data-en="Complete Guide to Product Strategy in 2024" data-fa="راهنمای کامل استراتژی محصول در ۲۰۲۴">Complete Guide to Product Strategy in 2024</h3>
+                        <p data-en="A comprehensive guide covering modern product strategy frameworks, methodologies, and best practices for product managers." data-fa="راهنمای جامعی که چارچوب‌ها، روش‌شناسی‌ها و بهترین شیوه‌های استراتژی محصول مدرن را پوشش می‌دهد.">
+                            A comprehensive guide covering modern product strategy frameworks, methodologies, and best practices for product managers.
+                        </p>
+                        <div class="article-meta">
+                            <span class="date"><i class="fas fa-calendar"></i> Jan 15, 2024</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 12 min read</span>
+                            <span class="views"><i class="fas fa-eye"></i> 1.2k views</span>
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Product Strategy</span>
+                            <span class="tag">Framework</span>
+                            <span class="tag">Best Practices</span>
+                        </div>
+                        <div class="article-actions">
+                            <a href="#" class="btn btn-outline btn-sm">
+                                <i class="fas fa-book-open"></i>
+                                <span data-en="Read Article" data-fa="مطالعه مقاله">Read Article</span>
+                            </a>
+                            <button class="btn-icon" onclick="shareArticle(this)" title="Share">
+                                <i class="fas fa-share"></i>
+                            </button>
+                            <button class="btn-icon" onclick="bookmarkArticle(this)" title="Bookmark">
+                                <i class="fas fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="books" data-date="2023-12-01">
+                    <div class="article-image">
+                        <img src="https://via.placeholder.com/400x250/10b981/ffffff?text=Product+Management+Book" alt="Product Management Excellence">
+                        <div class="article-category book">
+                            <span data-en="Book" data-fa="کتاب">Book</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 data-en="Product Management Excellence: From Vision to Execution" data-fa="تعالی مدیریت محصول: از ویژن تا اجرا">Product Management Excellence: From Vision to Execution</h3>
+                        <p data-en="My comprehensive book covering the entire product management lifecycle, from initial ideation to successful product launch and scaling." data-fa="کتاب جامع من که کل چرخه حیات مدیریت محصول را از ایده‌پردازی اولیه تا راه‌اندازی موفق محصول پوشش می‌دهد.">
+                            My comprehensive book covering the entire product management lifecycle, from initial ideation to successful product launch and scaling.
+                        </p>
+                        <div class="article-meta">
+                            <span class="date"><i class="fas fa-calendar"></i> Dec 1, 2023</span>
+                            <span class="read-time"><i class="fas fa-book"></i> 280 pages</span>
+                            <span class="views"><i class="fas fa-download"></i> 3.5k downloads</span>
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Product Management</span>
+                            <span class="tag">Leadership</span>
+                            <span class="tag">Strategy</span>
+                        </div>
+                        <div class="article-actions">
+                            <a href="#" class="btn btn-primary btn-sm">
+                                <i class="fas fa-download"></i>
+                                <span data-en="Download Book" data-fa="دانلود کتاب">Download Book</span>
+                            </a>
+                            <button class="btn-icon" onclick="shareArticle(this)" title="Share">
+                                <i class="fas fa-share"></i>
+                            </button>
+                            <button class="btn-icon" onclick="bookmarkArticle(this)" title="Bookmark">
+                                <i class="fas fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="research" data-date="2024-01-10">
+                    <div class="article-image">
+                        <img src="https://via.placeholder.com/400x250/6366f1/ffffff?text=User+Research" alt="User Research Methods">
+                        <div class="article-category research">
+                            <span data-en="Research" data-fa="تحقیق">Research</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 data-en="Modern User Research Methods for Product Teams" data-fa="روش‌های مدرن تحقیق کاربر برای تیم‌های محصول">Modern User Research Methods for Product Teams</h3>
+                        <p data-en="In-depth research study analyzing the effectiveness of various user research methodologies in different product development contexts." data-fa="مطالعه تحقیقی عمیق که تأثیرگذاری روش‌های مختلف تحقیق کاربر در زمینه‌های مختلف توسعه محصول را تحلیل می‌کند.">
+                            In-depth research study analyzing the effectiveness of various user research methodologies in different product development contexts.
+                        </p>
+                        <div class="article-meta">
+                            <span class="date"><i class="fas fa-calendar"></i> Jan 10, 2024</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 18 min read</span>
+                            <span class="views"><i class="fas fa-eye"></i> 856 views</span>
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">User Research</span>
+                            <span class="tag">Methodology</span>
+                            <span class="tag">Data Analysis</span>
+                        </div>
+                        <div class="article-actions">
+                            <a href="#" class="btn btn-outline btn-sm">
+                                <i class="fas fa-microscope"></i>
+                                <span data-en="View Research" data-fa="مشاهده تحقیق">View Research</span>
+                            </a>
+                            <button class="btn-icon" onclick="shareArticle(this)" title="Share">
+                                <i class="fas fa-share"></i>
+                            </button>
+                            <button class="btn-icon" onclick="bookmarkArticle(this)" title="Bookmark">
+                                <i class="fas fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="tutorials" data-date="2024-01-05">
+                    <div class="article-image">
+                        <img src="https://via.placeholder.com/400x250/f59e0b/ffffff?text=Agile+Tutorial" alt="Agile Methodology Tutorial">
+                        <div class="article-category tutorial">
+                            <span data-en="Tutorial" data-fa="آموزش">Tutorial</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 data-en="Mastering Agile Methodology: A Step-by-Step Tutorial" data-fa="تسلط بر روش‌شناسی چابک: آموزش گام به گام">Mastering Agile Methodology: A Step-by-Step Tutorial</h3>
+                        <p data-en="Practical tutorial series covering Agile principles, Scrum framework, and real-world implementation strategies for product teams." data-fa="سری آموزش عملی که اصول چابک، چارچوب اسکرام و استراتژی‌های پیاده‌سازی در دنیای واقعی را پوشش می‌دهد.">
+                            Practical tutorial series covering Agile principles, Scrum framework, and real-world implementation strategies for product teams.
+                        </p>
+                        <div class="article-meta">
+                            <span class="date"><i class="fas fa-calendar"></i> Jan 5, 2024</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 25 min read</span>
+                            <span class="views"><i class="fas fa-eye"></i> 2.1k views</span>
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Agile</span>
+                            <span class="tag">Scrum</span>
+                            <span class="tag">Tutorial</span>
+                        </div>
+                        <div class="article-actions">
+                            <a href="#" class="btn btn-outline btn-sm">
+                                <i class="fas fa-play"></i>
+                                <span data-en="Start Tutorial" data-fa="شروع آموزش">Start Tutorial</span>
+                            </a>
+                            <button class="btn-icon" onclick="shareArticle(this)" title="Share">
+                                <i class="fas fa-share"></i>
+                            </button>
+                            <button class="btn-icon" onclick="bookmarkArticle(this)" title="Bookmark">
+                                <i class="fas fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="articles" data-date="2023-12-20">
+                    <div class="article-image">
+                        <img src="https://via.placeholder.com/400x250/8b5cf6/ffffff?text=Data+Analytics" alt="Data-Driven Product Decisions">
+                        <div class="article-category">
+                            <span data-en="Article" data-fa="مقاله">Article</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 data-en="Making Data-Driven Product Decisions: A Practical Framework" data-fa="تصمیم‌گیری محصول بر اساس داده: چارچوب عملی">Making Data-Driven Product Decisions: A Practical Framework</h3>
+                        <p data-en="Learn how to leverage data analytics, user insights, and metrics to make informed product decisions that drive business growth." data-fa="یاد بگیرید چگونه از آنالیتیک داده، بینش کاربران و معیارها برای تصمیمات آگاهانه محصول استفاده کنید.">
+                            Learn how to leverage data analytics, user insights, and metrics to make informed product decisions that drive business growth.
+                        </p>
+                        <div class="article-meta">
+                            <span class="date"><i class="fas fa-calendar"></i> Dec 20, 2023</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 15 min read</span>
+                            <span class="views"><i class="fas fa-eye"></i> 1.8k views</span>
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Data Analytics</span>
+                            <span class="tag">Decision Making</span>
+                            <span class="tag">Metrics</span>
+                        </div>
+                        <div class="article-actions">
+                            <a href="#" class="btn btn-outline btn-sm">
+                                <i class="fas fa-book-open"></i>
+                                <span data-en="Read Article" data-fa="مطالعه مقاله">Read Article</span>
+                            </a>
+                            <button class="btn-icon" onclick="shareArticle(this)" title="Share">
+                                <i class="fas fa-share"></i>
+                            </button>
+                            <button class="btn-icon" onclick="bookmarkArticle(this)" title="Bookmark">
+                                <i class="fas fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card" data-category="articles" data-date="2023-11-30">
+                    <div class="article-image">
+                        <img src="https://via.placeholder.com/400x250/ef4444/ffffff?text=Leadership" alt="Product Leadership">
+                        <div class="article-category">
+                            <span data-en="Article" data-fa="مقاله">Article</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 data-en="Building High-Performance Product Teams" data-fa="ساخت تیم‌های محصول با عملکرد بالا">Building High-Performance Product Teams</h3>
+                        <p data-en="Essential strategies for recruiting, developing, and leading product teams that consistently deliver exceptional results." data-fa="استراتژی‌های ضروری برای استخدام، توسعه و رهبری تیم‌های محصول که نتایج استثنایی ارائه می‌دهند.">
+                            Essential strategies for recruiting, developing, and leading product teams that consistently deliver exceptional results.
+                        </p>
+                        <div class="article-meta">
+                            <span class="date"><i class="fas fa-calendar"></i> Nov 30, 2023</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 10 min read</span>
+                            <span class="views"><i class="fas fa-eye"></i> 1.5k views</span>
+                        </div>
+                        <div class="article-tags">
+                            <span class="tag">Leadership</span>
+                            <span class="tag">Team Building</span>
+                            <span class="tag">Management</span>
+                        </div>
+                        <div class="article-actions">
+                            <a href="#" class="btn btn-outline btn-sm">
+                                <i class="fas fa-book-open"></i>
+                                <span data-en="Read Article" data-fa="مطالعه مقاله">Read Article</span>
+                            </a>
+                            <button class="btn-icon" onclick="shareArticle(this)" title="Share">
+                                <i class="fas fa-share"></i>
+                            </button>
+                            <button class="btn-icon" onclick="bookmarkArticle(this)" title="Bookmark">
+                                <i class="fas fa-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-section">
+                <button class="btn btn-outline" id="loadMoreBtn">
+                    <i class="fas fa-plus"></i>
+                    <span data-en="Load More Articles" data-fa="بارگیری مقالات بیشتر">Load More Articles</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Modal -->
+    <div class="modal" id="uploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-en="Add New Article/Book" data-fa="افزودن مقاله/کتاب جدید">Add New Article/Book</h2>
+                <button class="modal-close" onclick="closeUploadModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="upload-form" id="uploadForm">
+                <div class="form-group">
+                    <label data-en="Type" data-fa="نوع">Type</label>
+                    <select id="contentType" required>
+                        <option value="articles" data-en="Article" data-fa="مقاله">Article</option>
+                        <option value="books" data-en="Book" data-fa="کتاب">Book</option>
+                        <option value="research" data-en="Research" data-fa="تحقیق">Research</option>
+                        <option value="tutorials" data-en="Tutorial" data-fa="آموزش">Tutorial</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Title" data-fa="عنوان">Title</label>
+                    <input type="text" id="contentTitle" required placeholder="Enter title..." data-placeholder-en="Enter title..." data-placeholder-fa="عنوان را وارد کنید...">
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Description" data-fa="توضیحات">Description</label>
+                    <textarea id="contentDescription" required placeholder="Enter description..." data-placeholder-en="Enter description..." data-placeholder-fa="توضیحات را وارد کنید..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Cover Image" data-fa="تصویر جلد">Cover Image</label>
+                    <div class="file-upload">
+                        <input type="file" id="coverImage" accept="image/*">
+                        <label for="coverImage" class="file-upload-label">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span data-en="Choose Image" data-fa="انتخاب تصویر">Choose Image</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="File/Link" data-fa="فایل/لینک">File/Link</label>
+                    <div class="file-upload">
+                        <input type="file" id="contentFile" accept=".pdf,.doc,.docx">
+                        <label for="contentFile" class="file-upload-label">
+                            <i class="fas fa-file-upload"></i>
+                            <span data-en="Choose File" data-fa="انتخاب فایل">Choose File</span>
+                        </label>
+                    </div>
+                    <input type="url" id="contentLink" placeholder="Or enter external link..." data-placeholder-en="Or enter external link..." data-placeholder-fa="یا لینک خارجی وارد کنید...">
+                </div>
+                
+                <div class="form-group">
+                    <label data-en="Tags" data-fa="برچسب‌ها">Tags</label>
+                    <input type="text" id="contentTags" placeholder="Enter tags separated by commas..." data-placeholder-en="Enter tags separated by commas..." data-placeholder-fa="برچسب‌ها را با کاما جدا کنید...">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" onclick="closeUploadModal()">
+                        <span data-en="Cancel" data-fa="لغو">Cancel</span>
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i>
+                        <span data-en="Save & Publish" data-fa="ذخیره و انتشار">Save & Publish</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>Mohammad Bagher Zolfaghari</h3>
+                    <p data-en="Senior Product Manager passionate about creating digital experiences" data-fa="مدیر ارشد محصول علاقه‌مند به خلق تجربیات دیجیتال">Senior Product Manager passionate about creating digital experiences</p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="index.html" data-en="Home" data-fa="خانه">Home</a>
+                        <a href="articles.html" data-en="Articles" data-fa="مقالات">Articles</a>
+                        <a href="videos.html" data-en="Videos" data-fa="ویدیوها">Videos</a>
+                        <a href="index.html#contact" data-en="Contact" data-fa="تماس">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="© 2024 Mohammad Bagher Zolfaghari. All rights reserved." data-fa="© ۲۰۲۴ محمد باقر ذوالفقاری. تمامی حقوق محفوظ است.">© 2024 Mohammad Bagher Zolfaghari. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="articles.js"></script>
+</body>
+</html>
