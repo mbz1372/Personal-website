@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos - Mohammad Bagher Zolfaghari</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-body">
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button onclick="toggleLanguage()" class="lang-btn">
+            <i class="fas fa-language"></i>
+            <span class="lang-text" data-en="فارسی" data-fa="English">فارسی</span>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <span class="logo-text" data-en="MBZ" data-fa="م.ب.ذ">MBZ</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-en="Home" data-fa="خانه">Home</a></li>
+                <li><a href="about.html" data-en="About" data-fa="درباره">About</a></li>
+                <li><a href="videos.html" class="active" data-en="Videos" data-fa="ویدیوها">Videos</a></li>
+                <li><a href="articles.html" data-en="Articles" data-fa="مقالات">Articles</a></li>
+                <li><a href="books.html" data-en="Books" data-fa="کتاب‌ها">Books</a></li>
+                <li><a href="index.html#contact" data-en="Contact" data-fa="تماس">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title" data-en="Video Content" data-fa="محتوای ویدیویی">Video Content</h1>
+                <p class="page-subtitle" data-en="Educational videos and presentations on product management and technology" data-fa="ویدیوهای آموزشی و ارائه‌ها درباره مدیریت محصول و فناوری">Educational videos and presentations on product management and technology</p>
+            </div>
+        </div>
+        <div class="floating-elements">
+            <div class="floating-circle circle-1"></div>
+            <div class="floating-circle circle-2"></div>
+            <div class="floating-circle circle-3"></div>
+        </div>
+    </section>
+
+    <!-- Video Categories -->
+    <section class="video-categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="filter-btn active" data-filter="all" data-en="All Videos" data-fa="همه ویدیوها">All Videos</button>
+                <button class="filter-btn" data-filter="product-management" data-en="Product Management" data-fa="مدیریت محصول">Product Management</button>
+                <button class="filter-btn" data-filter="strategy" data-en="Strategy" data-fa="استراتژی">Strategy</button>
+                <button class="filter-btn" data-filter="leadership" data-en="Leadership" data-fa="رهبری">Leadership</button>
+                <button class="filter-btn" data-filter="tutorials" data-en="Tutorials" data-fa="آموزش‌ها">Tutorials</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Grid -->
+    <section class="videos-grid">
+        <div class="container">
+            <div class="video-grid">
+                <!-- Video Item 1 -->
+                <div class="video-card" data-category="product-management">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">12:45</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 data-en="Product Strategy Fundamentals" data-fa="مبانی استراتژی محصول">Product Strategy Fundamentals</h3>
+                        <p data-en="Learn the core principles of building effective product strategies that drive business success." data-fa="اصول اساسی ایجاد استراتژی‌های مؤثر محصول که موجب موفقیت کسب‌وکار می‌شود را بیاموزید.">Learn the core principles of building effective product strategies that drive business success.</p>
+                        <div class="video-meta">
+                            <span class="video-date" data-en="Dec 2023" data-fa="دسامبر ۲۰۲۳">Dec 2023</span>
+                            <span class="video-views" data-en="1.2K views" data-fa="۱.۲K بازدید">1.2K views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 2 -->
+                <div class="video-card" data-category="leadership">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">18:30</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 data-en="Leading Cross-Functional Teams" data-fa="رهبری تیم‌های متقابل">Leading Cross-Functional Teams</h3>
+                        <p data-en="Best practices for managing diverse teams and fostering collaboration across departments." data-fa="بهترین روش‌های مدیریت تیم‌های متنوع و تقویت همکاری بین بخش‌ها.">Best practices for managing diverse teams and fostering collaboration across departments.</p>
+                        <div class="video-meta">
+                            <span class="video-date" data-en="Nov 2023" data-fa="نوامبر ۲۰۲۳">Nov 2023</span>
+                            <span class="video-views" data-en="890 views" data-fa="۸۹۰ بازدید">890 views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 3 -->
+                <div class="video-card" data-category="strategy">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">25:15</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 data-en="Data-Driven Decision Making" data-fa="تصمیم‌گیری بر اساس داده">Data-Driven Decision Making</h3>
+                        <p data-en="How to leverage analytics and user data to make informed product decisions." data-fa="چگونه از آنالیتیک و داده‌های کاربر برای تصمیم‌گیری آگاهانه محصول استفاده کنیم.">How to leverage analytics and user data to make informed product decisions.</p>
+                        <div class="video-meta">
+                            <span class="video-date" data-en="Oct 2023" data-fa="اکتبر ۲۰۲۳">Oct 2023</span>
+                            <span class="video-views" data-en="2.1K views" data-fa="۲.۱K بازدید">2.1K views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 4 -->
+                <div class="video-card" data-category="tutorials">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">15:20</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 data-en="User Research Methods" data-fa="روش‌های تحقیق کاربر">User Research Methods</h3>
+                        <p data-en="A comprehensive guide to conducting effective user research and gathering insights." data-fa="راهنمای جامع انجام تحقیقات مؤثر کاربر و جمع‌آوری بینش‌ها.">A comprehensive guide to conducting effective user research and gathering insights.</p>
+                        <div class="video-meta">
+                            <span class="video-date" data-en="Sep 2023" data-fa="سپتامبر ۲۰۲۳">Sep 2023</span>
+                            <span class="video-views" data-en="1.5K views" data-fa="۱.۵K بازدید">1.5K views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 5 -->
+                <div class="video-card" data-category="product-management">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">22:10</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 data-en="Agile Product Development" data-fa="توسعه محصول چابک">Agile Product Development</h3>
+                        <p data-en="Implementing agile methodologies in product development for faster delivery." data-fa="پیاده‌سازی روش‌های چابک در توسعه محصول برای تحویل سریع‌تر.">Implementing agile methodologies in product development for faster delivery.</p>
+                        <div class="video-meta">
+                            <span class="video-date" data-en="Aug 2023" data-fa="آگوست ۲۰۲۳">Aug 2023</span>
+                            <span class="video-views" data-en="980 views" data-fa="۹۸۰ بازدید">980 views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 6 -->
+                <div class="video-card" data-category="strategy">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">19:45</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 data-en="Market Analysis Techniques" data-fa="تکنیک‌های تحلیل بازار">Market Analysis Techniques</h3>
+                        <p data-en="Essential methods for analyzing market trends and competitive landscape." data-fa="روش‌های ضروری برای تحلیل روندهای بازار و چشم‌انداز رقابتی.">Essential methods for analyzing market trends and competitive landscape.</p>
+                        <div class="video-meta">
+                            <span class="video-date" data-en="Jul 2023" data-fa="ژوئیه ۲۰۲۳">Jul 2023</span>
+                            <span class="video-views" data-en="1.8K views" data-fa="۱.۸K بازدید">1.8K views</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-en="Want to Stay Updated?" data-fa="می‌خواهید به‌روز بمانید؟">Want to Stay Updated?</h2>
+                <p data-en="Subscribe to get notified about new video content and product management insights." data-fa="برای اطلاع از محتوای ویدیویی جدید و بینش‌های مدیریت محصول مشترک شوید.">Subscribe to get notified about new video content and product management insights.</p>
+                <a href="index.html#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    <span data-en="Get In Touch" data-fa="ارتباط با من">Get In Touch</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-en="© 2024 Mohammad Bagher Zolfaghari. All rights reserved." data-fa="© ۲۰۲۴ محمد باقر ذوالفقاری. تمامی حقوق محفوظ است.">© 2024 Mohammad Bagher Zolfaghari. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
