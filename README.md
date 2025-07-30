@@ -171,8 +171,8 @@ vercel --name my-resume
 **محمد باقر ذوالفقاری**
 - 📱 تلفن: ۰۹۳۵۴۷۱۷۵۴۸
 - 📧 ایمیل: mbz1372@gmail.com
-- 💼 LinkedIn: mohammad-bagher-zolfaghari
-- 🐙 GitHub: mohammadbagherzolfaghari
+- 💼 LinkedIn: www.linkedin.com/in/mbzolfaghari
+- 🐙 GitHub: https://github.com/mbz1372
 
 ---
 
