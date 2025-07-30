@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about Mohammad Bagher Zolfaghari - Senior Product Manager with expertise in digital product development and strategic planning">
     <title>About Me - Mohammad Bagher Zolfaghari</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚀%3C/text%3E%3C/svg%3E">
+    <link rel="alternate icon" href="favicon.ico">
+    
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body class="page-body">
-    <!-- Language Toggle -->
-    <div class="language-toggle">
-        <button onclick="toggleLanguage()" class="lang-btn">
-            <i class="fas fa-language"></i>
-            <span class="lang-text" data-en="فارسی" data-fa="English">فارسی</span>
+    <!-- Language Toggle - Mobile -->
+    <div class="language-toggle-mobile">
+        <button onclick="toggleLanguage()" class="lang-btn-mobile">
+            <i class="fas fa-globe"></i>
+            <span class="lang-text" data-en="فا" data-fa="EN">فا</span>
         </button>
     </div>
 
@@ -23,21 +29,31 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="index.html">
-                    <span class="logo-text" data-en="MBZ" data-fa="م.ب.ذ">MBZ</span>
+                    <div class="logo-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <span class="logo-text" data-en="Mohammad Bagher" data-fa="محمد باقر">Mohammad Bagher</span>
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" data-en="Home" data-fa="خانه">Home</a></li>
-                <li><a href="about.html" class="active" data-en="About" data-fa="درباره">About</a></li>
-                <li><a href="videos.html" data-en="Videos" data-fa="ویدیوها">Videos</a></li>
-                <li><a href="articles.html" data-en="Articles" data-fa="مقالات">Articles</a></li>
-                <li><a href="books.html" data-en="Books" data-fa="کتاب‌ها">Books</a></li>
-                <li><a href="index.html#contact" data-en="Contact" data-fa="تماس">Contact</a></li>
+                <li><a href="index.html" data-en="Home" data-fa="خانه"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html" class="active" data-en="About" data-fa="درباره"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="videos.html" data-en="Videos" data-fa="ویدیوها"><i class="fas fa-play"></i> Videos</a></li>
+                <li><a href="articles.html" data-en="Articles" data-fa="مقالات"><i class="fas fa-newspaper"></i> Articles</a></li>
+                <li><a href="books.html" data-en="Books" data-fa="کتاب‌ها"><i class="fas fa-book"></i> Books</a></li>
+                <li><a href="index.html#certifications" data-en="Certifications" data-fa="مدارک"><i class="fas fa-certificate"></i> Certifications</a></li>
+                <li><a href="index.html#contact" data-en="Contact" data-fa="تماس"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <button onclick="toggleLanguage()" class="lang-btn">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-text" data-en="فا" data-fa="EN">فا</span>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>

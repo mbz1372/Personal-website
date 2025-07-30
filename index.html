@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Bagher Zolfaghari - Product Manager</title>
+    <meta name="description" content="Mohammad Bagher Zolfaghari - Senior Product Manager specializing in digital product development, strategic planning, and team leadership">
+    <meta name="keywords" content="Product Manager, Digital Products, Strategy, Leadership, Iran, Tehran">
+    <meta name="author" content="Mohammad Bagher Zolfaghari">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Mohammad Bagher Zolfaghari - Product Manager">
+    <meta property="og:description" content="Senior Product Manager specializing in digital product development and strategic planning">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mbzolfaghari.com">
+    
+    <title>Mohammad Bagher Zolfaghari - Senior Product Manager</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚀%3C/text%3E%3C/svg%3E">
+    <link rel="alternate icon" href="favicon.ico">
+    
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Language Toggle -->
-    <div class="language-toggle">
-        <button onclick="toggleLanguage()" class="lang-btn">
-            <i class="fas fa-language"></i>
-            <span class="lang-text" data-en="فارسی" data-fa="English">فارسی</span>
+    <!-- Language Toggle - Now in Navigation -->
+    <div class="language-toggle-mobile">
+        <button onclick="toggleLanguage()" class="lang-btn-mobile">
+            <i class="fas fa-globe"></i>
+            <span class="lang-text" data-en="فا" data-fa="EN">فا</span>
         </button>
     </div>
 
@@ -22,61 +37,149 @@
     <nav class="nav">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text" data-en="MBZ" data-fa="م.ب.ذ">MBZ</span>
+                <a href="index.html">
+                    <div class="logo-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <span class="logo-text" data-en="Mohammad Bagher" data-fa="محمد باقر">Mohammad Bagher</span>
+                </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" data-en="Home" data-fa="خانه">Home</a></li>
-                <li><a href="about.html" data-en="About" data-fa="درباره">About</a></li>
-                <li><a href="videos.html" data-en="Videos" data-fa="ویدیوها">Videos</a></li>
-                <li><a href="articles.html" data-en="Articles" data-fa="مقالات">Articles</a></li>
-                <li><a href="books.html" data-en="Books" data-fa="کتاب‌ها">Books</a></li>
-                <li><a href="#contact" data-en="Contact" data-fa="تماس">Contact</a></li>
+                <li><a href="#home" data-en="Home" data-fa="خانه"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html" data-en="About" data-fa="درباره"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="videos.html" data-en="Videos" data-fa="ویدیوها"><i class="fas fa-play"></i> Videos</a></li>
+                <li><a href="articles.html" data-en="Articles" data-fa="مقالات"><i class="fas fa-newspaper"></i> Articles</a></li>
+                <li><a href="books.html" data-en="Books" data-fa="کتاب‌ها"><i class="fas fa-book"></i> Books</a></li>
+                <li><a href="#certifications" data-en="Certifications" data-fa="مدارک"><i class="fas fa-certificate"></i> Certifications</a></li>
+                <li><a href="#contact" data-en="Contact" data-fa="تماس"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <button onclick="toggleLanguage()" class="lang-btn">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-text" data-en="فا" data-fa="EN">فا</span>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+            <div class="hero-gradient"></div>
+        </div>
+        
         <div class="hero-content">
-            <div class="hero-image">
-                <div class="image-placeholder">
-                    <img src="profile.jpg" alt="Mohammad Bagher Zolfaghari" id="profileImg">
-                    <div class="image-overlay">
-                        <i class="fas fa-user"></i>
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <i class="fas fa-rocket"></i>
+                    <span data-en="Product Manager" data-fa="مدیر محصول">Product Manager</span>
+                </div>
+                
+                <h1 class="hero-name">
+                    <span class="hero-greeting" data-en="Hi, I'm" data-fa="سلام، من">Hi, I'm</span>
+                    <span class="hero-main-name" data-en="Mohammad Bagher" data-fa="محمد باقر">Mohammad Bagher</span>
+                    <span class="hero-last-name" data-en="Zolfaghari" data-fa="ذوالفقاری">Zolfaghari</span>
+                </h1>
+                
+                <div class="hero-title-wrapper">
+                    <h2 class="hero-title">
+                        <span class="typing-text" data-en="I build products that" data-fa="من محصولاتی می‌سازم که">I build products that</span>
+                        <span class="highlight-text" data-en="matter" data-fa="اهمیت دارند">matter</span>
+                    </h2>
+                </div>
+                
+                <p class="hero-description" data-en="Passionate product manager with 7+ years of experience in creating digital solutions that solve real-world problems and drive business growth. I specialize in turning complex ideas into successful products." data-fa="مدیر محصول پرشور با بیش از ۷ سال تجربه در ایجاد راه‌حل‌های دیجیتال که مشکلات واقعی را حل کرده و رشد کسب‌وکار را تقویت می‌کند. تخصص من تبدیل ایده‌های پیچیده به محصولات موفق است.">
+                    Passionate product manager with 7+ years of experience in creating digital solutions that solve real-world problems and drive business growth. I specialize in turning complex ideas into successful products.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">7+</span>
+                        <span class="stat-label" data-en="Years Experience" data-fa="سال تجربه">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label" data-en="Projects Delivered" data-fa="پروژه تحویل داده">Projects Delivered</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label" data-en="Team Members Led" data-fa="عضو تیم رهبری شده">Team Members Led</span>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        <span data-en="Let's Work Together" data-fa="بیایید با هم کار کنیم">Let's Work Together</span>
+                    </a>
+                    <a href="about.html" class="btn btn-outline">
+                        <i class="fas fa-user-circle"></i>
+                        <span data-en="More About Me" data-fa="بیشتر درباره من">More About Me</span>
+                    </a>
+                </div>
+                
+                <div class="hero-social">
+                    <span class="social-label" data-en="Follow me:" data-fa="دنبال کنید:">Follow me:</span>
+                    <div class="social-links-hero">
+                        <a href="https://linkedin.com/in/mbzolfaghari" target="_blank" class="social-link-hero linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com/mbzolfaghari" target="_blank" class="social-link-hero instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/mbzolfaghari" target="_blank" class="social-link-hero github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/mbzolfaghari" target="_blank" class="social-link-hero twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="hero-text">
-                <h1 class="hero-name">
-                    <span data-en="Mohammad Bagher Zolfaghari" data-fa="محمد باقر ذوالفقاری">Mohammad Bagher Zolfaghari</span>
-                </h1>
-                <h2 class="hero-title">
-                    <span data-en="Product Manager" data-fa="مدیر محصول">Product Manager</span>
-                </h2>
-                <p class="hero-description" data-en="Passionate about creating digital products that solve real-world problems and drive business growth" data-fa="علاقه‌مند به خلق محصولات دیجیتال که مشکلات واقعی را حل کرده و رشد کسب‌وکار را تقویت می‌کند">
-                    Passionate about creating digital products that solve real-world problems and drive business growth
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i>
-                        <span data-en="Get In Touch" data-fa="ارتباط با من">Get In Touch</span>
-                    </a>
-                    <a href="about.html" class="btn btn-outline">
-                        <i class="fas fa-user"></i>
-                        <span data-en="About Me" data-fa="درباره من">About Me</span>
-                    </a>
+            
+            <div class="hero-right">
+                <div class="hero-image-container">
+                    <div class="hero-image-wrapper">
+                        <img src="profile.jpg" alt="Mohammad Bagher Zolfaghari" id="profileImg" class="hero-image">
+                        <div class="image-decoration">
+                            <div class="decoration-ring ring-1"></div>
+                            <div class="decoration-ring ring-2"></div>
+                            <div class="decoration-dots"></div>
+                        </div>
+                        <div class="image-overlay">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="floating-cards">
+                        <div class="floating-card card-1">
+                            <i class="fas fa-lightbulb"></i>
+                            <span data-en="Innovation" data-fa="نوآوری">Innovation</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-users"></i>
+                            <span data-en="Leadership" data-fa="رهبری">Leadership</span>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-chart-line"></i>
+                            <span data-en="Growth" data-fa="رشد">Growth</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="scroll-indicator">
-            <div class="scroll-arrow">
-                <i class="fas fa-chevron-down"></i>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
             </div>
+            <span class="scroll-text" data-en="Scroll to explore" data-fa="برای کاوش اسکرول کنید">Scroll to explore</span>
         </div>
     </section>
 
@@ -113,6 +216,104 @@
                     <h3 data-en="About Me" data-fa="درباره من">About Me</h3>
                     <p data-en="Learn more about my journey and expertise" data-fa="بیشتر درباره سفر و تخصص من بدانید">Learn more about my journey and expertise</p>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title" data-en="Certifications & Achievements" data-fa="مدارک و دستاورد‌ها">Certifications & Achievements</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3 data-en="Google Analytics Certified" data-fa="گواهینامه گوگل آنالیتیکس">Google Analytics Certified</h3>
+                        <p class="cert-issuer" data-en="Google" data-fa="گوگل">Google</p>
+                        <p class="cert-date" data-en="2023" data-fa="۲۰۲۳">2023</p>
+                        <a href="https://skillshop.exceedlms.com/student/path/508845-google-analytics-individual-qualification" target="_blank" class="cert-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="View Certificate" data-fa="مشاهده مدرک">View Certificate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3 data-en="AWS Cloud Practitioner" data-fa="متخصص ابر آمازون">AWS Cloud Practitioner</h3>
+                        <p class="cert-issuer" data-en="Amazon Web Services" data-fa="خدمات وب آمازون">Amazon Web Services</p>
+                        <p class="cert-date" data-en="2023" data-fa="۲۰۲۳">2023</p>
+                        <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank" class="cert-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="View Certificate" data-fa="مشاهده مدرک">View Certificate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3 data-en="Certified Scrum Product Owner" data-fa="مالک محصول اسکرام معتبر">Certified Scrum Product Owner</h3>
+                        <p class="cert-issuer" data-en="Scrum Alliance" data-fa="اتحادیه اسکرام">Scrum Alliance</p>
+                        <p class="cert-date" data-en="2022" data-fa="۲۰۲۲">2022</p>
+                        <a href="https://www.scrumalliance.org/get-certified/product-owner-track/certified-scrum-product-owner" target="_blank" class="cert-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="View Certificate" data-fa="مشاهده مدرک">View Certificate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3 data-en="Microsoft Azure Fundamentals" data-fa="مبانی مایکروسافت آژور">Microsoft Azure Fundamentals</h3>
+                        <p class="cert-issuer" data-en="Microsoft" data-fa="مایکروسافت">Microsoft</p>
+                        <p class="cert-date" data-en="2022" data-fa="۲۰۲۲">2022</p>
+                        <a href="https://docs.microsoft.com/en-us/learn/certifications/azure-fundamentals/" target="_blank" class="cert-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="View Certificate" data-fa="مشاهده مدرک">View Certificate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3 data-en="Product Management Professional" data-fa="متخصص حرفه‌ای مدیریت محصول">Product Management Professional</h3>
+                        <p class="cert-issuer" data-en="Product School" data-fa="مدرسه محصول">Product School</p>
+                        <p class="cert-date" data-en="2021" data-fa="۲۰۲۱">2021</p>
+                        <a href="https://productschool.com/product-management-certification/" target="_blank" class="cert-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="View Certificate" data-fa="مشاهده مدرک">View Certificate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-hubspot"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3 data-en="HubSpot Content Marketing" data-fa="بازاریابی محتوای هابسپات">HubSpot Content Marketing</h3>
+                        <p class="cert-issuer" data-en="HubSpot Academy" data-fa="آکادمی هابسپات">HubSpot Academy</p>
+                        <p class="cert-date" data-en="2021" data-fa="۲۰۲۱">2021</p>
+                        <a href="https://academy.hubspot.com/courses/content-marketing" target="_blank" class="cert-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="View Certificate" data-fa="مشاهده مدرک">View Certificate</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -256,11 +457,11 @@
                 <div class="social-links">
                     <h3 data-en="Connect With Me" data-fa="با من در ارتباط باشید">Connect With Me</h3>
                     <div class="social-grid">
-                        <a href="https://linkedin.com/in/mohammad-bagher-zolfaghari" class="social-link linkedin" target="_blank">
+                        <a href="https://linkedin.com/in/mbzolfaghari" class="social-link linkedin" target="_blank">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </a>
-                        <a href="https://github.com/mohammadbagherzolfaghari" class="social-link github" target="_blank">
+                        <a href="https://github.com/mbzolfaghari" class="social-link github" target="_blank">
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                         </a>
@@ -268,7 +469,7 @@
                             <i class="fab fa-twitter"></i>
                             <span>Twitter</span>
                         </a>
-                        <a href="https://instagram.com/mohammad.b.zolfaghari" class="social-link instagram" target="_blank">
+                        <a href="https://instagram.com/mbzolfaghari" class="social-link instagram" target="_blank">
                             <i class="fab fa-instagram"></i>
                             <span>Instagram</span>
                         </a>
