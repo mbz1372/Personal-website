@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize skill bars animation
     initializeSkillBars();
+    
+    // Initialize contact form
+    initializeContactForm();
 });
 
 // Language switching function
@@ -81,6 +84,20 @@ function updateTextContent(language) {
             }
         }
     });
+    
+    // Update form placeholders
+    updateFormPlaceholders(language);
+}
+
+// Update form placeholders
+function updateFormPlaceholders(language) {
+    const inputs = document.querySelectorAll('input[data-en-placeholder], textarea[data-en-placeholder]');
+    inputs.forEach(input => {
+        const placeholder = input.getAttribute(`data-${language}-placeholder`);
+        if (placeholder) {
+            input.placeholder = placeholder;
+        }
+    });
 }
 
 // Update language button
@@ -90,6 +107,182 @@ function updateLanguageButton(language) {
         langText.textContent = language === 'en' ? 'فارسی' : 'English';
     }
 }
+
+// Initialize contact form
+function initializeContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleContactFormSubmit);
+        
+        // Add placeholder translations
+        const inputs = contactForm.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            if (input.name === 'name') {
+                input.setAttribute('data-en-placeholder', 'Your Name');
+                input.setAttribute('data-fa-placeholder', 'نام شما');
+            } else if (input.name === 'email') {
+                input.setAttribute('data-en-placeholder', 'Your Email');
+                input.setAttribute('data-fa-placeholder', 'ایمیل شما');
+            } else if (input.name === 'subject') {
+                input.setAttribute('data-en-placeholder', 'Subject');
+                input.setAttribute('data-fa-placeholder', 'موضوع');
+            } else if (input.name === 'message') {
+                input.setAttribute('data-en-placeholder', 'Your Message');
+                input.setAttribute('data-fa-placeholder', 'پیام شما');
+            }
+        });
+    }
+}
+
+// Handle contact form submission
+function handleContactFormSubmit(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    
+    // Basic validation
+    if (!data.name || !data.email || !data.subject || !data.message) {
+        const message = currentLanguage === 'en' ? 'Please fill in all fields' : 'لطفاً تمام فیلدها را پر کنید';
+        showNotification(message, 'error');
+        return;
+    }
+    
+    if (!isValidEmail(data.email)) {
+        const message = currentLanguage === 'en' ? 'Please enter a valid email address' : 'لطفاً یک آدرس ایمیل معتبر وارد کنید';
+        showNotification(message, 'error');
+        return;
+    }
+    
+    // Simulate form submission
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+    
+    // Simulate API call
+    setTimeout(() => {
+        const message = currentLanguage === 'en' ? 'Message sent successfully! I\'ll get back to you soon.' : 'پیام با موفقیت ارسال شد! به زودی با شما تماس خواهم گرفت.';
+        showNotification(message, 'success');
+        e.target.reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }, 2000);
+}
+
+// Email validation
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Show notification
+function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    const existingNotifications = document.querySelectorAll('.notification');
+    existingNotifications.forEach(notification => notification.remove());
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+            <span>${message}</span>
+        </div>
+        <button class="notification-close">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    // Add styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#0066cc'};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        max-width: 400px;
+        animation: slideInRight 0.3s ease;
+    `;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Add close functionality
+    const closeBtn = notification.querySelector('.notification-close');
+    closeBtn.addEventListener('click', () => {
+        notification.style.animation = 'slideOutRight 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    });
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.style.animation = 'slideOutRight 0.3s ease';
+            setTimeout(() => notification.remove(), 300);
+        }
+    }, 5000);
+}
+
+// Add notification animations to CSS
+const notificationStyles = `
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOutRight {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+    
+    .notification-content {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex: 1;
+    }
+    
+    .notification-close {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 0.25rem;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+    }
+    
+    .notification-close:hover {
+        background: rgba(255,255,255,0.2);
+    }
+`;
+
+// Add styles to head
+const styleSheet = document.createElement('style');
+styleSheet.textContent = notificationStyles;
+document.head.appendChild(styleSheet);
 
 // Handle profile image loading
 function handleProfileImageLoading() {

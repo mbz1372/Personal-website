@@ -10,14 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Language Toggle -->
-    <div class="language-toggle">
-        <button onclick="toggleLanguage()" class="lang-btn">
-            <i class="fas fa-language"></i>
-            <span class="lang-text" data-en="فارسی" data-fa="English">فارسی</span>
-        </button>
-    </div>
-
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
@@ -32,10 +24,18 @@
                 <li><a href="books.html" data-en="Books" data-fa="کتاب‌ها">Books</a></li>
                 <li><a href="#contact" data-en="Contact" data-fa="تماس">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <div class="language-toggle">
+                    <button onclick="toggleLanguage()" class="lang-btn">
+                        <i class="fas fa-language"></i>
+                        <span class="lang-text" data-en="فارسی" data-fa="English">فارسی</span>
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -112,35 +112,28 @@
     <!-- Quick Links Section -->
     <section id="quick-links" class="quick-links">
         <div class="container">
-            <h2 class="section-title" data-en="Explore My Work" data-fa="کارهای من را کاوش کنید">Explore My Work</h2>
+            <h2 class="section-title" data-en="About Me" data-fa="درباره من">About Me</h2>
             <div class="quick-links-grid">
-                <a href="videos.html" class="quick-link-card">
-                    <div class="link-icon">
-                        <i class="fas fa-play-circle"></i>
-                    </div>
-                    <h3 data-en="Video Content" data-fa="محتوای ویدیویی">Video Content</h3>
-                    <p data-en="Educational videos on product management and strategy" data-fa="ویدیوهای آموزشی درباره مدیریت محصول و استراتژی">Educational videos on product management and strategy</p>
-                </a>
-                <a href="articles.html" class="quick-link-card">
-                    <div class="link-icon">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
-                    <h3 data-en="Articles & Insights" data-fa="مقالات و بینش‌ها">Articles & Insights</h3>
-                    <p data-en="In-depth articles on industry trends and best practices" data-fa="مقالات عمیق درباره روندهای صنعت و بهترین روش‌ها">In-depth articles on industry trends and best practices</p>
-                </a>
-                <a href="books.html" class="quick-link-card">
-                    <div class="link-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3 data-en="Book Recommendations" data-fa="توصیه‌های کتاب">Book Recommendations</h3>
-                    <p data-en="Essential reads for product managers and leaders" data-fa="کتاب‌های ضروری برای مدیران محصول و رهبران">Essential reads for product managers and leaders</p>
-                </a>
                 <a href="about.html" class="quick-link-card">
                     <div class="link-icon">
                         <i class="fas fa-user"></i>
                     </div>
-                    <h3 data-en="About Me" data-fa="درباره من">About Me</h3>
-                    <p data-en="Learn more about my journey and expertise" data-fa="بیشتر درباره سفر و تخصص من بدانید">Learn more about my journey and expertise</p>
+                    <h3 data-en="My Journey" data-fa="سفر من">My Journey</h3>
+                    <p data-en="Discover my professional path and achievements" data-fa="مسیر حرفه‌ای و دستاوردهای من را کشف کنید">Discover my professional path and achievements</p>
+                </a>
+                <a href="about.html#skills" class="quick-link-card">
+                    <div class="link-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 data-en="Skills & Expertise" data-fa="مهارت‌ها و تخصص">Skills & Expertise</h3>
+                    <p data-en="Explore my technical and leadership capabilities" data-fa="توانایی‌های فنی و رهبری من را کاوش کنید">Explore my technical and leadership capabilities</p>
+                </a>
+                <a href="about.html#journey" class="quick-link-card">
+                    <div class="link-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3 data-en="Career Timeline" data-fa="خط زمانی حرفه‌ای">Career Timeline</h3>
+                    <p data-en="View my professional milestones and growth" data-fa="نقاط عطف حرفه‌ای و رشد من را مشاهده کنید">View my professional milestones and growth</p>
                 </a>
             </div>
         </div>
@@ -250,6 +243,8 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title" data-en="Get In Touch" data-fa="ارتباط با من">Get In Touch</h2>
+            <p class="section-subtitle" data-en="Let's discuss your next project or collaboration opportunity" data-fa="بیایید درباره پروژه بعدی یا فرصت همکاری شما صحبت کنیم">Let's discuss your next project or collaboration opportunity</p>
+            
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
@@ -259,6 +254,7 @@
                         <div class="contact-details">
                             <h3 data-en="Phone" data-fa="تلفن">Phone</h3>
                             <a href="tel:09354717548" class="contact-link">۰۹۳۵۴۷۱۷۵۴۸</a>
+                            <p class="contact-note" data-en="Available for calls and WhatsApp" data-fa="در دسترس برای تماس و واتساپ">Available for calls and WhatsApp</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -268,6 +264,7 @@
                         <div class="contact-details">
                             <h3 data-en="Email" data-fa="ایمیل">Email</h3>
                             <a href="mailto:mbz1372@gmail.com" class="contact-link">mbz1372@gmail.com</a>
+                            <p class="contact-note" data-en="I respond within 24 hours" data-fa="ظرف ۲۴ ساعت پاسخ می‌دهم">I respond within 24 hours</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -277,6 +274,17 @@
                         <div class="contact-details">
                             <h3 data-en="Location" data-fa="موقعیت">Location</h3>
                             <span class="contact-text" data-en="Mashhad, Iran" data-fa="مشهد، ایران">Mashhad, Iran</span>
+                            <p class="contact-note" data-en="Open to remote opportunities" data-fa="آماده فرصت‌های دورکاری">Open to remote opportunities</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-en="Availability" data-fa="دسترسی">Availability</h3>
+                            <span class="contact-text" data-en="Open for new opportunities" data-fa="آماده فرصت‌های جدید">Open for new opportunities</span>
+                            <p class="contact-note" data-en="Flexible scheduling for meetings" data-fa="برنامه‌ریزی انعطاف‌پذیر برای جلسات">Flexible scheduling for meetings</p>
                         </div>
                     </div>
                 </div>
@@ -284,6 +292,7 @@
                 <!-- Social Media Links -->
                 <div class="social-links">
                     <h3 data-en="Connect With Me" data-fa="با من در ارتباط باشید">Connect With Me</h3>
+                    <p class="social-subtitle" data-en="Follow me for insights and updates" data-fa="برای بینش‌ها و به‌روزرسانی‌ها دنبال کنید">Follow me for insights and updates</p>
                     <div class="social-grid">
                         <a href="https://linkedin.com/in/mbzolfaghari" class="social-link linkedin" target="_blank">
                             <i class="fab fa-linkedin"></i>
@@ -312,13 +321,97 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Quick Contact Form -->
+            <div class="quick-contact">
+                <h3 data-en="Send a Quick Message" data-fa="پیام سریع ارسال کنید">Send a Quick Message</h3>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        <span data-en="Send Message" data-fa="ارسال پیام">Send Message</span>
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p data-en="© 2024 Mohammad Bagher Zolfaghari. All rights reserved." data-fa="© ۲۰۲۴ محمد باقر ذوالفقاری. تمامی حقوق محفوظ است.">© 2024 Mohammad Bagher Zolfaghari. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-text" data-en="MBZ" data-fa="م.ب.ذ">MBZ</span>
+                    </div>
+                    <p class="footer-description" data-en="Product Manager passionate about creating innovative digital solutions that drive business growth and user satisfaction." data-fa="مدیر محصولی که به ایجاد راه‌حل‌های دیجیتال نوآورانه که رشد کسب‌وکار و رضایت کاربر را تقویت می‌کند، علاقه‌مند است.">Product Manager passionate about creating innovative digital solutions that drive business growth and user satisfaction.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-fa="لینک‌های سریع">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-en="Home" data-fa="خانه">Home</a></li>
+                        <li><a href="about.html" data-en="About" data-fa="درباره">About</a></li>
+                        <li><a href="videos.html" data-en="Videos" data-fa="ویدیوها">Videos</a></li>
+                        <li><a href="articles.html" data-en="Articles" data-fa="مقالات">Articles</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-en="Services" data-fa="خدمات">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#experience" data-en="Product Strategy" data-fa="استراتژی محصول">Product Strategy</a></li>
+                        <li><a href="#experience" data-en="Team Leadership" data-fa="رهبری تیم">Team Leadership</a></li>
+                        <li><a href="#experience" data-en="Digital Transformation" data-fa="تحول دیجیتال">Digital Transformation</a></li>
+                        <li><a href="#experience" data-en="Consulting" data-fa="مشاوره">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-en="Connect" data-fa="ارتباط">Connect</h4>
+                    <div class="footer-social">
+                        <a href="https://linkedin.com/in/mbzolfaghari" target="_blank" class="footer-social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/mbz1372" target="_blank" class="footer-social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/mbzolfaghari" target="_blank" class="footer-social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://t.me/mbzolfaghari" target="_blank" class="footer-social-link">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> mbz1372@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +98 935 471 7548</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p data-en="© 2024 Mohammad Bagher Zolfaghari. All rights reserved." data-fa="© ۲۰۲۴ محمد باقر ذوالفقاری. تمامی حقوق محفوظ است.">© 2024 Mohammad Bagher Zolfaghari. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#" data-en="Privacy Policy" data-fa="حریم خصوصی">Privacy Policy</a>
+                        <a href="#" data-en="Terms of Service" data-fa="شرایط خدمات">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
