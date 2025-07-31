@@ -10,14 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="page-body">
-    <!-- Language Toggle -->
-    <div class="language-toggle">
-        <button onclick="toggleLanguage()" class="lang-btn">
-            <i class="fas fa-language"></i>
-            <span class="lang-text" data-en="فارسی" data-fa="English">فارسی</span>
-        </button>
-    </div>
-
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
@@ -34,10 +26,18 @@
                 <li><a href="books.html" class="active" data-en="Books" data-fa="کتاب‌ها">Books</a></li>
                 <li><a href="index.html#contact" data-en="Contact" data-fa="تماس">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <div class="language-toggle">
+                    <button onclick="toggleLanguage()" class="lang-btn">
+                        <i class="fas fa-language"></i>
+                        <span class="lang-text" data-en="فارسی" data-fa="English">فارسی</span>
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -336,7 +336,66 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p data-en="© 2024 Mohammad Bagher Zolfaghari. All rights reserved." data-fa="© ۲۰۲۴ محمد باقر ذوالفقاری. تمامی حقوق محفوظ است.">© 2024 Mohammad Bagher Zolfaghari. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-text" data-en="MBZ" data-fa="م.ب.ذ">MBZ</span>
+                    </div>
+                    <p class="footer-description" data-en="Product Manager passionate about creating innovative digital solutions that drive business growth and user satisfaction." data-fa="مدیر محصولی که به ایجاد راه‌حل‌های دیجیتال نوآورانه که رشد کسب‌وکار و رضایت کاربر را تقویت می‌کند، علاقه‌مند است.">Product Manager passionate about creating innovative digital solutions that drive business growth and user satisfaction.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-fa="لینک‌های سریع">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-en="Home" data-fa="خانه">Home</a></li>
+                        <li><a href="about.html" data-en="About" data-fa="درباره">About</a></li>
+                        <li><a href="videos.html" data-en="Videos" data-fa="ویدیوها">Videos</a></li>
+                        <li><a href="articles.html" data-en="Articles" data-fa="مقالات">Articles</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-en="Services" data-fa="خدمات">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#experience" data-en="Product Strategy" data-fa="استراتژی محصول">Product Strategy</a></li>
+                        <li><a href="index.html#experience" data-en="Team Leadership" data-fa="رهبری تیم">Team Leadership</a></li>
+                        <li><a href="index.html#experience" data-en="Digital Transformation" data-fa="تحول دیجیتال">Digital Transformation</a></li>
+                        <li><a href="index.html#experience" data-en="Consulting" data-fa="مشاوره">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-en="Connect" data-fa="ارتباط">Connect</h4>
+                    <div class="footer-social">
+                        <a href="https://linkedin.com/in/mbzolfaghari" target="_blank" class="footer-social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/mbz1372" target="_blank" class="footer-social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/mbzolfaghari" target="_blank" class="footer-social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://t.me/mbzolfaghari" target="_blank" class="footer-social-link">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> mbz1372@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +98 935 471 7548</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p data-en="© 2024 Mohammad Bagher Zolfaghari. All rights reserved." data-fa="© ۲۰۲۴ محمد باقر ذوالفقاری. تمامی حقوق محفوظ است.">© 2024 Mohammad Bagher Zolfaghari. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#" data-en="Privacy Policy" data-fa="حریم خصوصی">Privacy Policy</a>
+                        <a href="#" data-en="Terms of Service" data-fa="شرایط خدمات">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
