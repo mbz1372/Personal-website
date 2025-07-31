@@ -2231,3 +2231,36 @@ html[lang="fa"] .form-row {
 html[lang="fa"] .skill-info {
     direction: rtl;
 }
+
+.image-placeholder {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--bg-secondary);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.image-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    box-sizing: border-box;
+}
