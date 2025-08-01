@@ -1,11 +1,16 @@
 // Language management
 let currentLanguage = 'en';
+let currentTheme = 'light';
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize language
     const savedLanguage = localStorage.getItem('website-language') || 'en';
     setLanguage(savedLanguage);
+
+    // Initialize theme
+    const savedTheme = localStorage.getItem('website-theme') || 'light';
+    setTheme(savedTheme);
     
     // Handle profile image loading
     handleProfileImageLoading();
@@ -105,6 +110,45 @@ function updateLanguageButton(language) {
     const langText = document.querySelector('.lang-text');
     if (langText) {
         langText.textContent = language === 'en' ? 'فارسی' : 'English';
+    }
+    // Update theme button text when language changes
+    updateThemeButton(currentTheme);
+}
+
+// Theme switching function
+function toggleTheme() {
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+}
+
+// Set theme function
+function setTheme(theme) {
+    currentTheme = theme;
+    const body = document.body;
+    if (theme === 'dark') {
+        body.classList.add('dark-mode');
+    } else {
+        body.classList.remove('dark-mode');
+    }
+
+    localStorage.setItem('website-theme', theme);
+    updateThemeButton(theme);
+}
+
+// Update theme button
+function updateThemeButton(theme) {
+    const themeText = document.querySelector('.theme-text');
+    const themeIcon = document.querySelector('.theme-btn i');
+    if (themeText && themeIcon) {
+        if (theme === 'dark') {
+            themeText.textContent = currentLanguage === 'en' ? 'Light' : 'روشن';
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            themeText.textContent = currentLanguage === 'en' ? 'Dark' : 'تاریک';
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
     }
 }
 
