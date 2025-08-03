@@ -1,6 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Download, Mail, Linkedin, MessageCircle, MapPin, ExternalLink, Calendar, Building } from 'lucide-react'
+import {
+  Download,
+  Mail,
+  Linkedin,
+  MessageCircle,
+  MapPin,
+  ExternalLink,
+  Calendar,
+  Building,
+  Award,
+} from 'lucide-react'
 import { profileData } from '@/lib/data'
 
 export default function HomePage() {
@@ -194,22 +204,25 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certificates.map((certificate) => (
-              <div 
+              <div
                 key={certificate.id}
                 className="card card-hover animate-scale-in group"
               >
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-secondary-900 dark:text-white font-english group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                        {certificate.title}
-                      </h3>
-                      <p className="text-primary-600 dark:text-primary-400 font-medium font-english">
-                        {certificate.issuer}
-                      </p>
+                    <div className="flex items-start space-x-reverse space-x-3 flex-1">
+                      <Award className="h-6 w-6 text-primary-600 dark:text-primary-400 mt-1 flex-shrink-0" />
+                      <div>
+                        <h3 className="text-lg font-bold text-secondary-900 dark:text-white font-english group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                          {certificate.title}
+                        </h3>
+                        <p className="text-primary-600 dark:text-primary-400 font-medium font-english">
+                          {certificate.issuer}
+                        </p>
+                      </div>
                     </div>
                     {certificate.credentialUrl && (
-                      <a 
+                      <a
                         href={certificate.credentialUrl}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -219,9 +232,12 @@ export default function HomePage() {
                       </a>
                     )}
                   </div>
-                  
+
                   <div className="flex items-center justify-between text-sm text-secondary-500 dark:text-secondary-400">
-                    <span className="font-english">{new Date(certificate.date).toLocaleDateString('fa-IR')}</span>
+                    <div className="flex items-center space-x-reverse space-x-2">
+                      <Calendar className="h-4 w-4" />
+                      <span className="font-english">{new Date(certificate.date).toLocaleDateString('fa-IR')}</span>
+                    </div>
                     {certificate.credentialId && (
                       <span className="font-english text-xs">#{certificate.credentialId}</span>
                     )}
