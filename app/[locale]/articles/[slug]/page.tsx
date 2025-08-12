@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { type Locale } from "../../layout";
+import { type Locale } from "@/lib/i18n";
 
 const sample = {
   "product-metrics": {
