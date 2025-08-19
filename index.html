@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Bagher Zolfaghari - Product Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text" data-en="MBZ" data-fa="م.ب.ذ">MBZ</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" data-en="Home" data-fa="خانه">Home</a></li>
+                <li><a href="#about" data-en="About" data-fa="درباره">About</a></li>
+                <li><a href="#experience" data-en="Experience" data-fa="تجربیات">Experience</a></li>
+                <li><a href="#certifications" data-en="Certifications" data-fa="مدارک">Certifications</a></li>
+                <li><a href="articles.html" data-en="Articles" data-fa="مقالات">Articles</a></li>
+                <li><a href="videos.html" data-en="Videos" data-fa="ویدیوها">Videos</a></li>
+                <li><a href="#contact" data-en="Contact" data-fa="تماس">Contact</a></li>
+                
+                <!-- Language Toggle in Navigation -->
+                <li class="nav-lang-toggle">
+                    <button onclick="toggleLanguage()" class="nav-lang-btn">
+                        <i class="fas fa-globe"></i>
+                        <span class="lang-text" data-en="فا" data-fa="EN">فا</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-animation">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <img src="profile.jpg" alt="Mohammad Bagher Zolfaghari" id="profileImg">
+                    <div class="image-overlay">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="image-border"></div>
+                </div>
+            </div>
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i>
+                    <span data-en="Product Management Expert" data-fa="متخصص مدیریت محصول">Product Management Expert</span>
+                </div>
+                <h1 class="hero-name">
+                    <span data-en="Mohammad Bagher Zolfaghari" data-fa="محمد باقر ذوالفقاری">Mohammad Bagher Zolfaghari</span>
+                </h1>
+                <h2 class="hero-title">
+                    <span class="typing-text" data-en="Senior Product Manager" data-fa="مدیر ارشد محصول">Senior Product Manager</span>
+                </h2>
+                <p class="hero-description" data-en="Transforming innovative ideas into successful digital products that drive business growth and create exceptional user experiences" data-fa="تبدیل ایده‌های نوآورانه به محصولات دیجیتال موفق که رشد کسب‌وکار را تقویت کرده و تجربه‌های استثنایی کاربری ایجاد می‌کند">
+                    Transforming innovative ideas into successful digital products that drive business growth and create exceptional user experiences
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label" data-en="Years Experience" data-fa="سال تجربه">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label" data-en="Products Launched" data-fa="محصول راه‌اندازی">Products Launched</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label" data-en="Team Members Led" data-fa="عضو تیم رهبری">Team Members Led</div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        <span data-en="Get In Touch" data-fa="ارتباط با من">Get In Touch</span>
+                    </a>
+                    <a href="#experience" class="btn btn-outline">
+                        <i class="fas fa-briefcase"></i>
+                        <span data-en="View Experience" data-fa="مشاهده تجربیات">View Experience</span>
+                    </a>
+                    <a href="resume.pdf" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-download"></i>
+                        <span data-en="Download CV" data-fa="دانلود رزومه">Download CV</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <span class="scroll-text" data-en="Scroll to explore" data-fa="برای کاوش اسکرول کنید">Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-en="About Me" data-fa="درباره من">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-en="I'm a passionate Senior Product Manager with over 6 years of experience in digital product development, strategic planning, and team leadership. I specialize in transforming complex business requirements into successful digital solutions that drive growth and enhance user experience." data-fa="من یک مدیر ارشد محصول پرشور با بیش از ۶ سال تجربه در توسعه محصولات دیجیتال، برنامه‌ریزی استراتژیک و رهبری تیم هستم. تخصص من تبدیل نیازهای پیچیده کسب‌وکار به راه‌حل‌های دیجیتال موفق است که رشد و تجربه کاربری را بهبود می‌بخشد.">
+                        I'm a passionate Senior Product Manager with over 6 years of experience in digital product development, strategic planning, and team leadership. I specialize in transforming complex business requirements into successful digital solutions that drive growth and enhance user experience.
+                    </p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 data-en="Product Strategy" data-fa="استراتژی محصول">Product Strategy</h3>
+                        <p data-en="Developing comprehensive product roadmaps and strategic planning for market success" data-fa="توسعه نقشه‌راه جامع محصول و برنامه‌ریزی استراتژیک برای موفقیت در بازار">Developing comprehensive product roadmaps and strategic planning for market success</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 data-en="Team Leadership" data-fa="رهبری تیم">Team Leadership</h3>
+                        <p data-en="Leading cross-functional teams and managing stakeholders to achieve product goals" data-fa="رهبری تیم‌های متقابل و مدیریت ذینفعان برای دستیابی به اهداف محصول">Leading cross-functional teams and managing stakeholders to achieve product goals</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 data-en="Data Analysis" data-fa="تحلیل داده">Data Analysis</h3>
+                        <p data-en="Making data-driven decisions and performance optimization through analytics" data-fa="تصمیم‌گیری بر اساس داده و بهینه‌سازی عملکرد از طریق آنالیتیک">Making data-driven decisions and performance optimization through analytics</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 data-en="Innovation" data-fa="نوآوری">Innovation</h3>
+                        <p data-en="Driving innovation and implementing cutting-edge technologies for competitive advantage" data-fa="هدایت نوآوری و پیاده‌سازی فناوری‌های پیشرفته برای مزیت رقابتی">Driving innovation and implementing cutting-edge technologies for competitive advantage</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="92"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title" data-en="Professional Experience" data-fa="تجربیات شغلی">Professional Experience</h2>
+            <div class="timeline">
+                <!-- Experience Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span data-en="2023 - Present" data-fa="۲۰۲۳ - اکنون">2023 - Present</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 data-en="Senior Product Manager" data-fa="مدیر ارشد محصول">Senior Product Manager</h3>
+                        <h4 data-en="TechCorp Solutions" data-fa="راه‌حل‌های تک‌کورپ">TechCorp Solutions</h4>
+                        <p data-en="Leading product development for enterprise SaaS platform, managing team of 15+ developers and designers. Successfully increased user engagement by 40% and reduced churn rate by 25% through data-driven product decisions." data-fa="رهبری توسعه محصول برای پلتفرم SaaS سازمانی، مدیریت تیم ۱۵+ توسعه‌دهنده و طراح. با موفقیت ۴۰٪ تعامل کاربر را افزایش داده و ۲۵٪ نرخ ترک را کاهش داده‌ام.">
+                            Leading product development for enterprise SaaS platform, managing team of 15+ developers and designers. Successfully increased user engagement by 40% and reduced churn rate by 25% through data-driven product decisions.
+                        </p>
+                        <div class="skills-used">
+                            <span class="skill-tag">Agile</span>
+                            <span class="skill-tag">Scrum</span>
+                            <span class="skill-tag">Product Analytics</span>
+                            <span class="skill-tag">User Research</span>
+                            <span class="skill-tag">Stakeholder Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span data-en="2021 - 2023" data-fa="۲۰۲۱ - ۲۰۲۳">2021 - 2023</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 data-en="Product Manager" data-fa="مدیر محصول">Product Manager</h3>
+                        <h4 data-en="DigitalFirst Inc." data-fa="دیجیتال فرست">DigitalFirst Inc.</h4>
+                        <p data-en="Managed mobile app development lifecycle from conception to launch. Successfully launched 3 major features that resulted in 60% increase in monthly active users and improved app store ratings from 3.2 to 4.7 stars." data-fa="مدیریت چرخه حیات توسعه اپلیکیشن موبایل از ایده تا راه‌اندازی. راه‌اندازی موفقیت‌آمیز ۳ ویژگی اصلی که منجر به ۶۰٪ افزایش کاربران فعال ماهانه شد.">
+                            Managed mobile app development lifecycle from conception to launch. Successfully launched 3 major features that resulted in 60% increase in monthly active users and improved app store ratings from 3.2 to 4.7 stars.
+                        </p>
+                        <div class="skills-used">
+                            <span class="skill-tag">Mobile Strategy</span>
+                            <span class="skill-tag">UX/UI Design</span>
+                            <span class="skill-tag">Market Research</span>
+                            <span class="skill-tag">A/B Testing</span>
+                            <span class="skill-tag">ASO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span data-en="2019 - 2021" data-fa="۲۰۱۹ - ۲۰۲۱">2019 - 2021</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3 data-en="Associate Product Manager" data-fa="مدیر محصول مشارکتی">Associate Product Manager</h3>
+                        <h4 data-en="StartupHub" data-fa="استارتاپ هاب">StartupHub</h4>
+                        <p data-en="Collaborated with engineering and design teams to define product requirements and specifications. Led the implementation of analytics tracking that improved data visibility by 80% and enabled better decision-making processes." data-fa="همکاری با تیم‌های مهندسی و طراحی برای تعریف نیازمندی‌ها و مشخصات محصول. رهبری پیاده‌سازی ردیابی آنالیتیک که قابلیت مشاهده داده را ۸۰٪ بهبود بخشید.">
+                            Collaborated with engineering and design teams to define product requirements and specifications. Led the implementation of analytics tracking that improved data visibility by 80% and enabled better decision-making processes.
+                        </p>
+                        <div class="skills-used">
+                            <span class="skill-tag">Requirements Analysis</span>
+                            <span class="skill-tag">Stakeholder Management</span>
+                            <span class="skill-tag">Analytics Implementation</span>
+                            <span class="skill-tag">Documentation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span data-en="2017 - 2019" data-fa="۲۰۱۷ - ۲۰۱۹">2017 - 2019</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 data-en="Business Analyst" data-fa="تحلیلگر کسب‌وکار">Business Analyst</h3>
+                        <h4 data-en="TechSolutions Co." data-fa="راه‌حل‌های فناوری">TechSolutions Co.</h4>
+                        <p data-en="Analyzed business processes and requirements for digital transformation projects. Created detailed documentation and wireframes that streamlined development process and reduced project delivery time by 30%." data-fa="تحلیل فرآیندهای کسب‌وکار و نیازمندی‌ها برای پروژه‌های تحول دیجیتال. ایجاد مستندات تفصیلی و wireframe که فرآیند توسعه را بهینه کرد.">
+                            Analyzed business processes and requirements for digital transformation projects. Created detailed documentation and wireframes that streamlined development process and reduced project delivery time by 30%.
+                        </p>
+                        <div class="skills-used">
+                            <span class="skill-tag">Business Analysis</span>
+                            <span class="skill-tag">Process Mapping</span>
+                            <span class="skill-tag">Wireframing</span>
+                            <span class="skill-tag">Requirements Gathering</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title" data-en="Certifications & Achievements" data-fa="مدارک و دستاوردها">Certifications & Achievements</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3 data-en="Google Product Management Certificate" data-fa="گواهینامه مدیریت محصول گوگل">Google Product Management Certificate</h3>
+                        <p class="cert-issuer" data-en="Google Career Certificates" data-fa="گواهینامه‌های شغلی گوگل">Google Career Certificates</p>
+                        <p class="cert-date" data-en="Issued: March 2023" data-fa="صادر شده: مارس ۲۰۲۳">Issued: March 2023</p>
+                        <a href="#" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="View Certificate" data-fa="مشاهده مدرک">View Certificate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3 data-en="Certified Scrum Product Owner (CSPO)" data-fa="مدیر محصول اسکرام معتبر">Certified Scrum Product Owner (CSPO)</h3>
+                        <p class="cert-issuer" data-en="Scrum Alliance" data-fa="اتحادیه اسکرام">Scrum Alliance</p>
+                        <p class="cert-date" data-en="Issued: January 2022" data-fa="صادر شده: ژانویه ۲۰۲۲">Issued: January 2022</p>
+                        <a href="#" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="View Certificate" data-fa="مشاهده مدرک">View Certificate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3 data-en="AWS Cloud Practitioner" data-fa="متخصص کلود AWS">AWS Cloud Practitioner</h3>
+                        <p class="cert-issuer" data-en="Amazon Web Services" data-fa="خدمات وب آمازون">Amazon Web Services</p>
+                        <p class="cert-date" data-en="Issued: September 2022" data-fa="صادر شده: سپتامبر ۲۰۲۲">Issued: September 2022</p>
+                        <a href="#" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="View Certificate" data-fa="مشاهده مدرک">View Certificate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3 data-en="Product Management Bootcamp" data-fa="بوت‌کمپ مدیریت محصول">Product Management Bootcamp</h3>
+                        <p class="cert-issuer" data-en="Product School" data-fa="مدرسه محصول">Product School</p>
+                        <p class="cert-date" data-en="Issued: June 2021" data-fa="صادر شده: ژوئن ۲۰۲۱">Issued: June 2021</p>
+                        <a href="#" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="View Certificate" data-fa="مشاهده مدرک">View Certificate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3 data-en="Microsoft Azure Fundamentals" data-fa="مبانی مایکروسافت آژور">Microsoft Azure Fundamentals</h3>
+                        <p class="cert-issuer" data-en="Microsoft" data-fa="مایکروسافت">Microsoft</p>
+                        <p class="cert-date" data-en="Issued: November 2022" data-fa="صادر شده: نوامبر ۲۰۲۲">Issued: November 2022</p>
+                        <a href="#" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="View Certificate" data-fa="مشاهده مدرک">View Certificate</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3 data-en="Design Thinking Certification" data-fa="گواهینامه تفکر طراحی">Design Thinking Certification</h3>
+                        <p class="cert-issuer" data-en="Stanford d.school" data-fa="مدرسه طراحی استنفورد">Stanford d.school</p>
+                        <p class="cert-date" data-en="Issued: August 2021" data-fa="صادر شده: آگوست ۲۰۲۱">Issued: August 2021</p>
+                        <a href="#" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="View Certificate" data-fa="مشاهده مدرک">View Certificate</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-en="Get In Touch" data-fa="ارتباط با من">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-en="Phone" data-fa="تلفن">Phone</h3>
+                            <a href="tel:09354717548" class="contact-link">۰۹۳۵۴۷۱۷۵۴۸</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-en="Email" data-fa="ایمیل">Email</h3>
+                            <a href="mailto:mbz1372@gmail.com" class="contact-link">mbz1372@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-en="Location" data-fa="موقعیت">Location</h3>
+                            <span class="contact-text" data-en="Tehran, Iran" data-fa="تهران، ایران">Tehran, Iran</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <h3 data-en="Connect With Me" data-fa="با من در ارتباط باشید">Connect With Me</h3>
+                    <div class="social-grid">
+                        <a href="https://linkedin.com/in/mbzolfaghari" class="social-link linkedin" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/mbzolfaghari" class="social-link github" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://twitter.com/mbzolfaghari" class="social-link twitter" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="https://instagram.com/mbzolfaghari" class="social-link instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://t.me/mbzolfaghari" class="social-link telegram" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                            <span>Telegram</span>
+                        </a>
+                        <a href="https://wa.me/989354717548" class="social-link whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>Mohammad Bagher Zolfaghari</h3>
+                    <p data-en="Senior Product Manager passionate about creating digital experiences" data-fa="مدیر ارشد محصول علاقه‌مند به خلق تجربیات دیجیتال">Senior Product Manager passionate about creating digital experiences</p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="articles.html" data-en="Articles" data-fa="مقالات">Articles</a>
+                        <a href="videos.html" data-en="Videos" data-fa="ویدیوها">Videos</a>
+                        <a href="#contact" data-en="Contact" data-fa="تماس">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="© 2024 Mohammad Bagher Zolfaghari. All rights reserved." data-fa="© ۲۰۲۴ محمد باقر ذوالفقاری. تمامی حقوق محفوظ است.">© 2024 Mohammad Bagher Zolfaghari. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
