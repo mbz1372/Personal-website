@@ -80,6 +80,7 @@ html[lang="fa"] body {
     padding: 15px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 20px;
 }
 
 .nav-logo {
@@ -96,6 +97,8 @@ html[lang="fa"] body {
     list-style: none;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
+    margin-left: auto;
 }
 
 .nav-menu a {
@@ -243,6 +246,12 @@ html[lang="fa"] body {
     z-index: 1;
 }
 
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .hero-image {
     display: flex;
     justify-content: center;
@@ -355,6 +364,7 @@ html[lang="fa"] body {
     color: var(--text-secondary);
     margin-bottom: 30px;
     line-height: 1.6;
+    text-align: justify;
 }
 
 /* Hero Stats */
@@ -362,6 +372,7 @@ html[lang="fa"] body {
     display: flex;
     gap: 40px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .stat-item {
@@ -1024,11 +1035,28 @@ section {
 
 /* RTL Adjustments */
 html[lang="fa"] .nav-menu {
-    direction: ltr;
+    direction: rtl;
+    margin-left: 0;
+    margin-right: auto;
+    flex-direction: row-reverse;
 }
 
 html[lang="fa"] .hero-content {
-    grid-template-columns: 1.5fr 1fr;
+    direction: rtl;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+}
+
+html[lang="fa"] .hero-text,
+html[lang="fa"] .hero-title,
+html[lang="fa"] .hero-name,
+html[lang="fa"] .hero-description,
+html[lang="fa"] .hero-buttons {
+    text-align: right;
+}
+
+html[lang="fa"] .hero-description {
+    text-align: justify;
 }
 
 html[lang="fa"] .hero-stats {
