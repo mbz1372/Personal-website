@@ -330,21 +330,22 @@ function initializeInteractiveElements() {
         @media (max-width: 768px) {
             .nav-menu {
                 position: fixed;
-                left: -100%;
+                inset-inline: 0;
                 top: 70px;
                 flex-direction: column;
                 background-color: rgba(255, 255, 255, 0.98);
                 backdrop-filter: blur(20px);
                 width: 100%;
                 text-align: center;
-                transition: 0.3s;
+                transition: transform 0.3s ease;
                 box-shadow: var(--shadow-lg);
                 padding: 30px 0;
                 z-index: 998;
+                transform: translateX(-100%);
             }
-            
+
             .nav-menu.active {
-                left: 0;
+                transform: translateX(0);
             }
             
             .nav-menu li {
@@ -364,12 +365,12 @@ function initializeInteractiveElements() {
             }
             
             html[lang="fa"] .nav-menu {
-                right: -100%;
-                left: auto;
+                inset-inline: 0;
+                transform: translateX(100%);
             }
-            
+
             html[lang="fa"] .nav-menu.active {
-                right: 0;
+                transform: translateX(0);
             }
         }
     `;
