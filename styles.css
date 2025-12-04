@@ -80,6 +80,7 @@ html[lang="fa"] body {
     padding: 15px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 20px;
 }
 
 .nav-logo {
@@ -96,6 +97,12 @@ html[lang="fa"] body {
     list-style: none;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+.nav-menu li {
+    text-align: left;
 }
 
 .nav-menu a {
@@ -243,6 +250,13 @@ html[lang="fa"] body {
     z-index: 1;
 }
 
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
 .hero-image {
     display: flex;
     justify-content: center;
@@ -354,7 +368,11 @@ html[lang="fa"] body {
     font-size: 1.2rem;
     color: var(--text-secondary);
     margin-bottom: 30px;
-    line-height: 1.6;
+    line-height: 1.7;
+    max-width: 480px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Hero Stats */
@@ -362,6 +380,7 @@ html[lang="fa"] body {
     display: flex;
     gap: 40px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .stat-item {
@@ -1024,11 +1043,27 @@ section {
 
 /* RTL Adjustments */
 html[lang="fa"] .nav-menu {
-    direction: ltr;
+    direction: rtl;
+    margin: 0;
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+html[lang="fa"] .nav-menu li {
+    text-align: right;
 }
 
 html[lang="fa"] .hero-content {
-    grid-template-columns: 1.5fr 1fr;
+    direction: rtl;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+}
+
+html[lang="fa"] .hero-text,
+html[lang="fa"] .hero-title,
+html[lang="fa"] .hero-name,
+html[lang="fa"] .hero-buttons {
+    text-align: right;
 }
 
 html[lang="fa"] .hero-stats {
@@ -1054,12 +1089,25 @@ html[lang="fa"] .nav-lang-toggle {
     margin-left: 0;
 }
 
+html[lang="fa"] .nav-container {
+    flex-direction: row-reverse;
+}
+
+html[lang="fa"] .nav-logo {
+    text-align: right;
+}
+
 html[lang="fa"] .social-grid {
     direction: ltr;
 }
 
 html[lang="fa"] .footer-content {
     grid-template-columns: 1fr 2fr;
+}
+
+html[lang="fa"] .certification-card {
+    flex-direction: row-reverse;
+    text-align: right;
 }
 
 /* Responsive Design */
@@ -1070,22 +1118,23 @@ html[lang="fa"] .footer-content {
     
     .nav-menu {
         position: fixed;
-        left: -100%;
+        inset-inline: 0;
         top: 70px;
         flex-direction: column;
         background-color: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(20px);
         width: 100%;
         text-align: center;
-        transition: 0.3s;
+        transition: transform 0.3s ease;
         box-shadow: var(--shadow-lg);
         padding: 30px 0;
         z-index: 998;
         gap: 20px;
+        transform: translateX(-100%);
     }
-    
+
     .nav-menu.active {
-        left: 0;
+        transform: translateX(0);
     }
     
     .nav-lang-toggle {
@@ -1113,16 +1162,28 @@ html[lang="fa"] .footer-content {
         gap: 40px;
         text-align: center;
         padding: 100px 20px 50px;
+        justify-items: center;
     }
-    
+
+    .hero-text {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-description {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
     .hero-name {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
-    
+
     .hero-title {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        line-height: 1.4;
     }
-    
+
     .hero-stats {
         justify-content: center;
         gap: 30px;
@@ -1138,6 +1199,11 @@ html[lang="fa"] .footer-content {
     
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .image-placeholder {
+        width: 240px;
+        height: 240px;
     }
     
     .timeline::before {
@@ -1167,6 +1233,12 @@ html[lang="fa"] .footer-content {
         flex-direction: column;
         text-align: center;
     }
+
+    html[lang="fa"] .certification-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
     
     .contact-info {
         grid-template-columns: 1fr;
@@ -1180,14 +1252,28 @@ html[lang="fa"] .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     html[lang="fa"] .nav-menu {
-        right: -100%;
-        left: auto;
+        align-items: flex-end;
+        text-align: right;
+        justify-content: flex-start;
+        transform: translateX(100%);
     }
-    
+
+    html[lang="fa"] .hero-text {
+        align-items: center;
+        text-align: center;
+    }
+
+    html[lang="fa"] .hero-title,
+    html[lang="fa"] .hero-name,
+    html[lang="fa"] .hero-buttons,
+    html[lang="fa"] .hero-description {
+        text-align: center;
+    }
+
     html[lang="fa"] .nav-menu.active {
-        right: 0;
+        transform: translateX(0);
     }
     
     html[lang="fa"] .timeline::before {
@@ -1202,10 +1288,19 @@ html[lang="fa"] .footer-content {
 }
 
 @media (max-width: 480px) {
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
     .hero-name {
         font-size: 2rem;
     }
-    
+
+    .hero-title {
+        font-size: 1.1rem;
+    }
+
     .hero-stats {
         flex-direction: column;
         gap: 20px;
