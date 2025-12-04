@@ -82,23 +82,26 @@ function updateLanguageButton(language) {
 // Handle profile image loading
 function handleProfileImageLoading() {
     const profileImg = document.getElementById('profileImg');
-    
+
     if (profileImg) {
+        const desiredSrc = profileImg.dataset.profileSrc || profileImg.src;
+
         // Create a temporary image to check if the file exists
         const tempImg = new Image();
-        
+
         tempImg.onload = function() {
-            profileImg.src = 'profile.jpg';
+            profileImg.src = desiredSrc;
             profileImg.classList.add('loaded');
         };
-        
+
         tempImg.onerror = function() {
             // If profile.jpg doesn't exist, show placeholder
             console.log('Profile image not found, using placeholder');
+            profileImg.src = 'profile-placeholder.svg';
             profileImg.classList.add('loaded'); // This will hide the overlay
         };
-        
-        tempImg.src = 'profile.jpg';
+
+        tempImg.src = desiredSrc;
     }
 }
 
