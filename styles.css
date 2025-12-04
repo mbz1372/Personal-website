@@ -1105,13 +1105,18 @@ html[lang="fa"] .footer-content {
     grid-template-columns: 1fr 2fr;
 }
 
+html[lang="fa"] .certification-card {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
         padding: 0 15px;
     }
     
-    .nav-menu {
+    .nav-menu {                    
         position: fixed;
         left: -100%;
         top: 70px;
@@ -1227,6 +1232,12 @@ html[lang="fa"] .footer-content {
         flex-direction: column;
         text-align: center;
     }
+
+    html[lang="fa"] .certification-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
     
     .contact-info {
         grid-template-columns: 1fr;
@@ -1246,6 +1257,7 @@ html[lang="fa"] .footer-content {
         left: auto;
         align-items: flex-end;
         text-align: right;
+        justify-content: flex-start;
     }
 
     html[lang="fa"] .hero-text {
@@ -1262,6 +1274,7 @@ html[lang="fa"] .footer-content {
 
     html[lang="fa"] .nav-menu.active {
         right: 0;
+        left: auto;
     }
     
     html[lang="fa"] .timeline::before {
