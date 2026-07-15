@@ -1,577 +1,231 @@
-// Language management
-let currentLanguage = 'en';
+const content = {
+  fa: {
+    brandName:'محمد باقر ذوالفقاری', brandTitle:'Product & Operations',
+    navProfile:'پروفایل', navExperience:'تجربه', navWork:'کارها', navSkills:'مهارت‌ها', navContact:'تماس',
+    available:'آماده همکاری‌های منتخب در محصول، عملیات و TravelTech',
+    profileName:'محمد باقر ذوالفقاری', profileRole:'مدیر محصول و عملیات، متخصص سیستم‌های عملیاتی مقیاس‌پذیر',
+    factLocation:'موقعیت', factEmail:'ایمیل', factPhone:'تلفن', factWeb:'وبسایت', locationValue:'مشهد، ایران',
+    heroEyebrow:'TravelTech · CRM · Product Operations · Marketplace Systems',
+    heroTitle:'من بین محصول، عملیات و داده پل می‌سازم؛ جایی که ایده باید به سیستم قابل اجرا تبدیل شود.',
+    heroLead:'تجربه من از مدیریت عملیات زنجیره تأمین بیش از ۳۵۰۰ هتل تا طراحی CRM، داشبوردهای مدیریتی، فرآیندهای SLA و سیستم‌های داخلی برای تیم‌های محصول، مارکتینگ و عملیات امتداد دارد.',
+    ctaWork:'دیدن نمونه کارها', ctaResume:'مشاهده رزومه', ctaPrint:'نسخه چاپی',
+    metricHotels:'هتل در دامنه عملیات', metricAutomation:'کاهش کار دستی با اتوماسیون', metricSla:'بهبود پایبندی به SLA', metricThroughput:'افزایش توان عملیاتی ماژول‌ها',
+    overviewLabel:'Executive profile', overviewTitle:'رزومه‌ای برای کسی که فقط ایده نمی‌دهد؛ سیستم را تا اجرا جلو می‌برد.',
+    overviewP1:'من در نقطه اتصال محصول، عملیات و کسب‌وکار کار می‌کنم. وقتی یک تیم با داده‌های پراکنده، فرآیندهای دستی، خطای عملیاتی یا نیازهای مبهم روبه‌روست، نقش من تبدیل آن به ساختار محصول، داشبورد، گردش‌کار و تصمیم قابل اندازه‌گیری است.',
+    overviewP2:'تمرکز اصلی من TravelTech، CRM، marketplace operations، طراحی KPI، بهینه‌سازی conversion و ساخت ابزارهای داخلی برای تیم‌های واقعی است؛ ابزارهایی که باید هر روز کار کنند، نه فقط در دمو زیبا باشند.',
+    quote:'«محصول خوب فقط صفحه زیبا نیست؛ فرآیندی است که تیم را سریع‌تر، دقیق‌تر و قابل‌اتکاتر می‌کند.»',
+    experienceLabel:'Experience', experienceTitle:'مسیر شغلی، به ترتیب معکوس زمانی و با تمرکز روی اثر.',
+    workLabel:'Selected work', workTitle:'نمونه کارهایی که رزومه را از متن به شواهد قابل لمس تبدیل می‌کنند.',
+    casesLabel:'Case studies', casesTitle:'سه روایت کوتاه از حل مسئله در مقیاس عملیاتی.',
+    skillsLabel:'Capabilities', skillsTitle:'ترکیب مهارت‌ها: محصول، عملیات، داده، اجرا و ارتباط بین تیمی.',
+    educationLabel:'Education & certificates', educationTitle:'پایه فنی، تجربه محصول و یادگیری مداوم.',
+    thinkingLabel:'Thinking', thinkingTitle:'موضوعاتی که درباره‌شان فکر می‌کنم و می‌نویسم.',
+    contactLabel:'Contact', contactTitle:'برای ساخت محصول، بهینه‌سازی عملیات یا همکاری‌های TravelTech گفتگو کنیم.',
+    contactText:'اگر نیاز به طراحی سیستم، CRM، داشبورد عملیاتی، ساختار KPI یا تبدیل نیازهای کسب‌وکار به محصول قابل اجرا دارید، خوشحال می‌شوم صحبت کنیم.',
+    copyEmail:'کپی ایمیل', backTop:'بازگشت به بالا', readMore:'ادامه ایده', result:'نتیجه', copied:'ایمیل کپی شد'
+  },
+  en: {
+    brandName:'Mohammad Bagher Zolfaghari', brandTitle:'Product & Operations',
+    navProfile:'Profile', navExperience:'Experience', navWork:'Work', navSkills:'Skills', navContact:'Contact',
+    available:'Open to selected product, operations and TravelTech collaborations',
+    profileName:'Mohammad Bagher Zolfaghari', profileRole:'Product and operations leader for scalable operating systems',
+    factLocation:'Location', factEmail:'Email', factPhone:'Phone', factWeb:'Website', locationValue:'Mashhad, Iran',
+    heroEyebrow:'TravelTech · CRM · Product Operations · Marketplace Systems',
+    heroTitle:'I connect product, operations and data where ideas must become systems that actually run.',
+    heroLead:'My work spans supply-chain operations for 3,500+ hotels, CRM design, operating dashboards, SLA processes and internal systems for product, marketing and operations teams.',
+    ctaWork:'View selected work', ctaResume:'View resume', ctaPrint:'Print version',
+    metricHotels:'hotels in operational scope', metricAutomation:'manual work reduced through automation', metricSla:'SLA adherence improvement', metricThroughput:'module throughput lift',
+    overviewLabel:'Executive profile', overviewTitle:'A resume for someone who does not just propose ideas; he turns them into working systems.',
+    overviewP1:'I work at the intersection of product, operations and business. When a team faces scattered data, manual processes, operational errors or unclear requirements, I translate the mess into product structure, dashboards, workflows and measurable decisions.',
+    overviewP2:'My focus is TravelTech, CRM, marketplace operations, KPI design, conversion improvement and internal tools for real teams — tools that must work every day, not just look good in a demo.',
+    quote:'“A good product is not just a beautiful screen; it is a process that makes the team faster, more accurate and more reliable.”',
+    experienceLabel:'Experience', experienceTitle:'Career path in reverse chronological order, focused on impact.',
+    workLabel:'Selected work', workTitle:'Projects that turn the resume from text into tangible evidence.',
+    casesLabel:'Case studies', casesTitle:'Three short stories about solving problems at operational scale.',
+    skillsLabel:'Capabilities', skillsTitle:'A blended skill set across product, operations, data, execution and cross-functional leadership.',
+    educationLabel:'Education & certificates', educationTitle:'Technical foundation, product experience and continuous learning.',
+    thinkingLabel:'Thinking', thinkingTitle:'Topics I think and write about.',
+    contactLabel:'Contact', contactTitle:'Let’s talk about product systems, operational excellence or TravelTech collaboration.',
+    contactText:'If you need CRM, operating dashboards, KPI structure or a way to turn business requirements into an executable product system, I would be happy to talk.',
+    copyEmail:'Copy email', backTop:'Back to top', readMore:'Read idea', result:'Result', copied:'Email copied'
+  }
+};
 
-// Initialize the page
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize language
-    const savedLanguage = localStorage.getItem('website-language') || 'en';
-    setLanguage(savedLanguage);
-    
-    // Handle profile image loading
-    handleProfileImageLoading();
-    
-    // Add smooth transitions
-    addPageTransitions();
-    
-    // Initialize navigation
-    initializeNavigation();
-    
-    // Add scroll effects
-    addScrollEffects();
-    
-    // Initialize interactive elements
-    initializeInteractiveElements();
+const data = {
+  fa: {
+    experience: [
+      {date:'فروردین ۱۴۰۴ — اکنون', title:'مدیر عملیات زنجیره تأمین', company:'ایران‌هتل‌آنلاین، مشهد', bullets:['هدایت عملیات و فرآیندهای زنجیره تأمین برای بیش از ۳۵۰۰ هتل با تمرکز بر دقت نرخ و موجودی.','طراحی داشبوردهای داخلی و اتوماسیون وظایف تکراری با کاهش حدود ۴۰٪ کار دستی.','همکاری با تیم محصول و فناوری برای رفع مشکلات API و بهبود فرآیند رزرو.','مدیریت تیم چندوظیفه‌ای و بهبود ۲۵٪ پایبندی به SLA از طریق استانداردسازی فرآیندها.']},
+      {date:'مهر ۱۴۰۳ — فروردین ۱۴۰۴', title:'مدیر محصول', company:'ایران‌هتل‌آنلاین، مشهد', bullets:['مدیریت roadmap و تحویل قابلیت‌های CRM و CMS داخلی برای تیم‌های عملیات و بازاریابی.','طراحی داشبوردهای BI برای KPIهایی مانند conversion، occupancy و دقت قیمت‌گذاری.','رهبری بهبودهای UX و عملیاتی که بسته به ماژول باعث افزایش ۲۰ تا ۳۵٪ throughput شد.','ترجمه نیازهای کسب‌وکار به راهکار محصول و هماهنگی بین مهندسی، طراحی و عملیات.']},
+      {date:'دی ۱۴۰۲ — فروردین ۱۴۰۴', title:'توسعه‌دهنده سایت و محصول', company:'ایران‌هتل‌آنلاین، مشهد', bullets:['مدیریت پیکربندی هتل‌ها، قیمت‌گذاری، ظرفیت و بنرهای تبلیغاتی در مقیاس بزرگ.','بهینه‌سازی جایگاه‌های صفحه اصلی و دسته‌بندی‌ها برای افزایش engagement و conversion در کمپین‌ها.','پایش معیارهای روزانه سایت مانند traffic، bounce rate، CTR و conversion و ارائه پیشنهادهای اجرایی.']},
+      {date:'دی ۱۳۹۹ — دی ۱۴۰۲', title:'استراتژیست محصول و رهبر توسعه', company:'JRlead / LinkGenius / SmartSync', bullets:['تعریف چشم‌انداز، roadmap و ویژگی‌های اصلی CRM هوشمند از ایده تا محصول SaaS.','تشکیل تیم چندوظیفه‌ای، مدیریت چرخه محصول و راه‌اندازی فرآیندهای agile و sprint.','طراحی ماژول‌های CRM، اتوماسیون گردش‌کار و داشبوردهای چندلایه بر اساس نیاز واقعی کسب‌وکار.']}
+    ],
+    projects: [
+      {meta:'CRM · Internal product', title:'CRM اختصاصی برای B2B و Marketing', text:'از نیازسنجی تا طراحی فیلدها، وضعیت‌ها، گزارش‌ها و فرآیندهای پیگیری؛ سیستمی برای تبدیل ارتباطات پراکنده به pipeline قابل مدیریت.', tags:['Discovery','Workflow','Reporting','Product Ops'], featured:true},
+      {meta:'Supply Chain · Analytics', title:'داشبوردهای زنجیره تأمین هتل', text:'پایش نرخ، ظرفیت، SLA، providerها و وضعیت آنلاین‌بودن برای تصمیم‌گیری سریع‌تر و کاهش خطای عملیاتی.', tags:['BI','KPI','Operations']},
+      {meta:'Automation · Google API', title:'سیستم پایش اتومات نظرات', text:'ابزار کمک‌تصمیم برای بررسی، انتشار یا رد نظرات با هدف کاهش کار تکراری و افزایش کیفیت کنترل محتوا.', tags:['Automation','Content Ops','Quality']}
+    ],
+    cases: [
+      {num:'01', title:'استانداردسازی عملیات تأمین در مقیاس هزاران هتل', text:'طراحی فرآیندهای SOP، چارچوب SLA، داشبورد پایش و سازوکار تصمیم‌گیری داده‌محور برای کاهش خطا و افزایش سرعت پاسخ‌گویی.', result:'کاهش کار دستی، افزایش SLA، دقت بیشتر نرخ و موجودی'},
+      {num:'02', title:'تبدیل نیازهای تیمی به CRM قابل اجرا', text:'مصاحبه با ذی‌نفعان، طراحی workflow، مشخص‌کردن stageها، فیلدها و گزارش‌هایی که هم تیم ثبت کند و هم مدیر بتواند تصمیم بگیرد.', result:'شفافیت pipeline و نظم بیشتر در پیگیری‌ها'},
+      {num:'03', title:'SmartSync / LinkGenius از ایده تا SaaS', text:'تعریف vision، roadmap، تیم‌سازی، مدیریت sprint و طراحی ماژول‌های CRM هوشمند برای محصولی آماده ورود به بازار.', result:'تحویل محصول SaaS از صفر تا مرحله عرضه'}
+    ],
+    skills: [
+      {title:'Product', items:['Roadmap','Product discovery','UX improvement','Requirement mapping','Feature delivery']},
+      {title:'Operations', items:['SOP design','SLA management','Supply chain ops','Process optimization','Cross-team execution']},
+      {title:'Data & Systems', items:['KPI design','BI dashboards','CRM structure','CMS workflows','Google API automation']},
+      {title:'Business', items:['B2B negotiation','Partner operations','Campaign coordination','Conversion thinking','Stakeholder alignment']}
+    ],
+    credentials: [
+      {title:'کارشناسی مهندسی مکانیک', meta:'دانشگاه فردوسی مشهد · ۱۳۹۰ تا ۱۳۹۵'},
+      {title:'Foundations of Project Management', meta:'Google'},
+      {title:'The Fundamentals of Digital Marketing', meta:'Google'},
+      {title:'Agile with Atlassian Jira', meta:'Atlassian'},
+      {title:'Google Ads Search Certification', meta:'Google'},
+      {title:'Performance Management with OKR', meta:'IranHotelOnline'}
+    ],
+    articles: [
+      {type:'Product Ops', title:'چرا PM عملیاتی باید عدد، SLA و رفتار تیم را بفهمد؟', text:'در محصولاتی که با نرخ، ظرفیت، موجودی و تیم عملیات درگیرند، تصمیم محصولی بدون فهم عملیات ناقص است.'},
+      {type:'TravelTech', title:'کیفیت زنجیره تأمین هتل را با چه شاخص‌هایی بسنجیم؟', text:'دقت نرخ، تازگی ظرفیت، سرعت رفع خطا و وضعیت providerها چهار سیگنال مهم برای کیفیت تأمین هستند.'},
+      {type:'CRM', title:'CRM خوب از فرم شروع نمی‌شود؛ از تصمیم مدیریتی شروع می‌شود.', text:'قبل از طراحی فیلدها باید بدانیم مدیر چه تصمیمی از داده می‌خواهد و تیم چرا چیزی را ثبت نمی‌کند.'}
+    ]
+  },
+  en: {
+    experience: [
+      {date:'Apr 2025 — Present', title:'Supply Chain Operations Manager', company:'IranHotelOnline, Mashhad', bullets:['Lead supply-chain operations for 3,500+ hotels with focus on pricing accuracy and inventory quality.','Designed internal monitoring dashboards and automation that reduced repetitive manual work by about 40%.','Worked with product and engineering teams to resolve API issues and improve reservation reliability.','Managed a cross-functional operations team and improved SLA adherence by 25% through process alignment.']},
+      {date:'Sep 2024 — Apr 2025', title:'Product Manager', company:'IranHotelOnline, Mashhad', bullets:['Owned roadmap and delivery for internal CRM and CMS capabilities used by operations and marketing teams.','Designed BI dashboards for conversion, occupancy and pricing-accuracy KPIs.','Led UX and operational improvements that increased module throughput by 20–35% depending on the workflow.','Translated business needs into product solutions across engineering, design and operations.']},
+      {date:'Dec 2023 — Apr 2025', title:'Website & Product Developer', company:'IranHotelOnline, Mashhad', bullets:['Managed hotel configuration, pricing, inventory and promotional placements at scale.','Optimized homepage and category placements to improve engagement and conversion during campaigns.','Monitored traffic, bounce rate, CTR and conversion metrics and turned them into actionable improvements.']},
+      {date:'Dec 2020 — Dec 2023', title:'Product Strategist & Development Lead', company:'JRlead / LinkGenius / SmartSync', bullets:['Defined vision, roadmap and core features for an intelligent CRM from idea to SaaS product.','Built cross-functional teams, managed product lifecycle and introduced agile sprint workflows.','Designed CRM modules, workflow automation and multi-layer dashboards based on real business requirements.']}
+    ],
+    projects: [
+      {meta:'CRM · Internal product', title:'Dedicated CRM for B2B and Marketing', text:'From discovery to fields, stages, reports and follow-up workflows — turning scattered relationships into a manageable pipeline.', tags:['Discovery','Workflow','Reporting','Product Ops'], featured:true},
+      {meta:'Supply Chain · Analytics', title:'Hotel supply-chain dashboards', text:'Monitoring pricing, inventory, SLA, providers and online status to speed up decisions and reduce operational errors.', tags:['BI','KPI','Operations']},
+      {meta:'Automation · Google API', title:'Automated review monitoring system', text:'A decision-support tool for reviewing, publishing or rejecting comments while reducing repetitive work and improving content quality.', tags:['Automation','Content Ops','Quality']}
+    ],
+    cases: [
+      {num:'01', title:'Standardizing supply operations across thousands of hotels', text:'Built SOPs, SLA framework, monitoring dashboards and data-driven decision routines to reduce errors and improve response speed.', result:'Less manual work, stronger SLA, better pricing and inventory quality'},
+      {num:'02', title:'Turning team needs into an executable CRM', text:'Interviewed stakeholders, designed workflows, stages, fields and reports that the team can actually maintain and managers can use for decisions.', result:'Clearer pipeline and more disciplined follow-up'},
+      {num:'03', title:'SmartSync / LinkGenius from idea to SaaS', text:'Defined vision, roadmap, team setup, sprint process and intelligent CRM modules for a market-ready SaaS product.', result:'SaaS product delivered from zero to launch stage'}
+    ],
+    skills: [
+      {title:'Product', items:['Roadmap','Product discovery','UX improvement','Requirement mapping','Feature delivery']},
+      {title:'Operations', items:['SOP design','SLA management','Supply chain ops','Process optimization','Cross-team execution']},
+      {title:'Data & Systems', items:['KPI design','BI dashboards','CRM structure','CMS workflows','Google API automation']},
+      {title:'Business', items:['B2B negotiation','Partner operations','Campaign coordination','Conversion thinking','Stakeholder alignment']}
+    ],
+    credentials: [
+      {title:'B.Sc. Mechanical Engineering', meta:'Ferdowsi University of Mashhad · 2011–2016'},
+      {title:'Foundations of Project Management', meta:'Google'},
+      {title:'The Fundamentals of Digital Marketing', meta:'Google'},
+      {title:'Agile with Atlassian Jira', meta:'Atlassian'},
+      {title:'Google Ads Search Certification', meta:'Google'},
+      {title:'Performance Management with OKR', meta:'IranHotelOnline'}
+    ],
+    articles: [
+      {type:'Product Ops', title:'Why operational PMs must understand numbers, SLA and team behavior', text:'In products with pricing, inventory and operations teams, product decisions are incomplete without operational literacy.'},
+      {type:'TravelTech', title:'Which metrics reveal hotel supply-chain quality?', text:'Pricing accuracy, inventory freshness, issue resolution speed and provider status are critical supply-quality signals.'},
+      {type:'CRM', title:'A good CRM starts with management decisions, not forms', text:'Before designing fields, you need to know which decisions managers need from the data and why teams avoid recording it.'}
+    ]
+  }
+};
+
+const $ = (selector, scope = document) => scope.querySelector(selector);
+const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+let lang = localStorage.getItem('mbz-lang') || 'fa';
+let theme = localStorage.getItem('mbz-theme') || 'light';
+
+function applyStaticText(){
+  const dict = content[lang];
+  $$('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if(dict[key]) el.textContent = dict[key];
+  });
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+  document.body.classList.toggle('body-en', lang === 'en');
+  document.body.classList.toggle('lang-en', lang === 'en');
+  $('#langToggle').textContent = lang === 'fa' ? 'EN' : 'فا';
+}
+
+function renderExperience(){
+  $('#experienceList').innerHTML = data[lang].experience.map(item => `
+    <article class="time-card">
+      <div class="time-card__date">${item.date}</div>
+      <div>
+        <h3>${item.title}</h3>
+        <div class="company">${item.company}</div>
+        <ul>${item.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+      </div>
+    </article>`).join('');
+}
+function renderProjects(){
+  $('#projectList').innerHTML = data[lang].projects.map(p => `
+    <article class="project-card ${p.featured ? 'featured' : ''}">
+      <div>
+        <div class="meta">${p.meta}</div>
+        <h3>${p.title}</h3>
+        <p>${p.text}</p>
+      </div>
+      <div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+    </article>`).join('');
+}
+function renderCases(){
+  $('#caseList').innerHTML = data[lang].cases.map(c => `
+    <article class="case-card">
+      <div class="num">${c.num}</div>
+      <div>
+        <h3>${c.title}</h3>
+        <p>${c.text}</p>
+        <span class="result">${content[lang].result}: ${c.result}</span>
+      </div>
+    </article>`).join('');
+}
+function renderSkills(){
+  $('#skillsList').innerHTML = data[lang].skills.map(s => `
+    <article class="skill-card"><h3>${s.title}</h3><ul>${s.items.map(i => `<li>${i}</li>`).join('')}</ul></article>`).join('');
+}
+function renderCredentials(){
+  $('#credentialList').innerHTML = data[lang].credentials.map(c => `
+    <article class="credential"><strong>${c.title}</strong><span>${c.meta}</span></article>`).join('');
+}
+function renderArticles(){
+  $('#articleList').innerHTML = data[lang].articles.map(a => `
+    <article class="article-card">
+      <div><span class="type">${a.type}</span><h3>${a.title}</h3><p>${a.text}</p></div>
+      <a href="mailto:mbz1372@gmail.com?subject=${encodeURIComponent(a.title)}">${content[lang].readMore} →</a>
+    </article>`).join('');
+}
+function renderAll(){
+  applyStaticText();
+  renderExperience(); renderProjects(); renderCases(); renderSkills(); renderCredentials(); renderArticles();
+}
+function applyTheme(){
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem('mbz-theme', theme);
+}
+function updateProgress(){
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+  $('#progress').style.width = `${pct}%`;
+}
+function activeNav(){
+  const sections = ['profile','experience','work','skills','contact'];
+  let current = 'profile';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if(el && el.getBoundingClientRect().top < 180) current = id;
+  });
+  $$('.nav a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${current}`));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  $('#year').textContent = new Date().getFullYear();
+  applyTheme(); renderAll(); updateProgress(); activeNav();
+
+  $('#langToggle').addEventListener('click', () => { lang = lang === 'fa' ? 'en' : 'fa'; localStorage.setItem('mbz-lang', lang); renderAll(); activeNav(); });
+  $('#themeToggle').addEventListener('click', () => { theme = theme === 'light' ? 'dark' : 'light'; applyTheme(); });
+  $('#menuToggle').addEventListener('click', () => { document.body.classList.toggle('menu-open'); $('#mobileNav').classList.toggle('open'); });
+  $$('#mobileNav a').forEach(a => a.addEventListener('click', () => { document.body.classList.remove('menu-open'); $('#mobileNav').classList.remove('open'); }));
+  $('#printBtn').addEventListener('click', () => window.print());
+  $('#copyEmail').addEventListener('click', async () => { await navigator.clipboard.writeText('mbz1372@gmail.com'); $('#copyEmail').textContent = content[lang].copied; setTimeout(() => $('#copyEmail').textContent = content[lang].copyEmail, 1600); });
+  window.addEventListener('scroll', () => { updateProgress(); activeNav(); }, {passive:true});
 });
-
-// Language switching function
-function toggleLanguage() {
-    const newLanguage = currentLanguage === 'en' ? 'fa' : 'en';
-    setLanguage(newLanguage);
-}
-
-// Set language function
-function setLanguage(language) {
-    currentLanguage = language;
-    
-    // Update HTML attributes
-    const htmlElement = document.documentElement;
-    htmlElement.setAttribute('lang', language);
-    htmlElement.setAttribute('dir', language === 'fa' ? 'rtl' : 'ltr');
-    
-    // Update all text content
-    updateTextContent(language);
-    
-    // Save preference
-    localStorage.setItem('website-language', language);
-    
-    // Update language button text
-    updateLanguageButton(language);
-    
-    // Add transition effect
-    document.body.style.opacity = '0.7';
-    setTimeout(() => {
-        document.body.style.opacity = '1';
-    }, 150);
-}
-
-// Update text content based on language
-function updateTextContent(language) {
-    const elements = document.querySelectorAll('[data-en][data-fa]');
-    
-    elements.forEach(element => {
-        const text = element.getAttribute(`data-${language}`);
-        if (text) {
-            // Handle different element types
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                element.placeholder = text;
-            } else {
-                element.textContent = text;
-            }
-        }
-    });
-}
-
-// Update language button
-function updateLanguageButton(language) {
-    const langText = document.querySelector('.lang-text');
-    if (langText) {
-        langText.textContent = language === 'en' ? 'فارسی' : 'English';
-    }
-}
-
-// Handle profile image loading
-function handleProfileImageLoading() {
-    const profileImg = document.getElementById('profileImg');
-    
-    if (profileImg) {
-        // Create a temporary image to check if the file exists
-        const tempImg = new Image();
-        
-        tempImg.onload = function() {
-            profileImg.src = 'profile.jpg';
-            profileImg.classList.add('loaded');
-        };
-        
-        tempImg.onerror = function() {
-            // If profile.jpg doesn't exist, show placeholder
-            console.log('Profile image not found, using placeholder');
-            profileImg.classList.add('loaded'); // This will hide the overlay
-        };
-        
-        tempImg.src = 'profile.jpg';
-    }
-}
-
-// Navigation functionality
-function initializeNavigation() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    // Hamburger menu toggle
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-    }
-    
-    // Close menu when clicking on links
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-    
-    // Smooth scroll to sections
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 70; // Account for fixed nav
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Update active nav link on scroll
-    window.addEventListener('scroll', updateActiveNavLink);
-}
-
-// Update active navigation link based on scroll position
-function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    const scrollPos = window.scrollY + 100;
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
-}
-
-// Add scroll effects
-function addScrollEffects() {
-    const nav = document.querySelector('.nav');
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    
-    window.addEventListener('scroll', function() {
-        const scrolled = window.scrollY;
-        
-        // Navigation background effect
-        if (scrolled > 100) {
-            nav.style.background = 'rgba(255, 255, 255, 0.98)';
-            nav.style.boxShadow = 'var(--shadow)';
-        } else {
-            nav.style.background = 'rgba(255, 255, 255, 0.95)';
-            nav.style.boxShadow = 'none';
-        }
-        
-        // Hide scroll indicator when scrolled
-        if (scrollIndicator) {
-            if (scrolled > 200) {
-                scrollIndicator.style.opacity = '0';
-            } else {
-                scrollIndicator.style.opacity = '1';
-            }
-        }
-    });
-    
-    // Scroll indicator click
-    if (scrollIndicator) {
-        scrollIndicator.addEventListener('click', function() {
-            const aboutSection = document.querySelector('#about');
-            if (aboutSection) {
-                aboutSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    }
-}
-
-// Add page transitions and animations
-function addPageTransitions() {
-    // Add intersection observer for animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                
-                // Add staggered animation for children
-                const children = entry.target.querySelectorAll('.skill-card, .timeline-item, .contact-item, .social-link');
-                children.forEach((child, index) => {
-                    setTimeout(() => {
-                        child.style.opacity = '1';
-                        child.style.transform = 'translateY(0)';
-                    }, index * 100);
-                });
-            }
-        });
-    }, observerOptions);
-    
-    // Observe sections for scroll animations
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
-    });
-    
-    // Set initial state for animated elements
-    const animatedElements = document.querySelectorAll('.skill-card, .timeline-item, .contact-item, .social-link');
-    animatedElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    });
-}
-
-// Initialize interactive elements
-function initializeInteractiveElements() {
-    // Add click event listeners for contact items
-    const contactLinks = document.querySelectorAll('.contact-link');
-    contactLinks.forEach(link => {
-        if (link.textContent.includes('@') || link.textContent.includes('۰۹')) {
-            link.addEventListener('click', function(e) {
-                if (link.textContent.includes('@') || link.textContent.includes('۰۹')) {
-                    // For email and phone, also copy to clipboard
-                    copyToClipboard(link.textContent, link);
-                }
-            });
-        }
-    });
-    
-    // Add hover effects for skill cards
-    const skillCards = document.querySelectorAll('.skill-card');
-    skillCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            const icon = this.querySelector('i');
-            if (icon) {
-                icon.style.transform = 'scale(1.1) rotate(5deg)';
-            }
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            const icon = this.querySelector('i');
-            if (icon) {
-                icon.style.transform = 'scale(1) rotate(0deg)';
-            }
-        });
-    });
-    
-    // Add click animations for buttons
-    const buttons = document.querySelectorAll('.btn');
-    buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            // Create ripple effect
-            const ripple = document.createElement('div');
-            ripple.style.position = 'absolute';
-            ripple.style.borderRadius = '50%';
-            ripple.style.background = 'rgba(255, 255, 255, 0.3)';
-            ripple.style.transform = 'scale(0)';
-            ripple.style.animation = 'ripple 0.6s linear';
-            
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            ripple.style.width = ripple.style.height = size + 'px';
-            ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-            ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-            
-            this.style.position = 'relative';
-            this.style.overflow = 'hidden';
-            this.appendChild(ripple);
-            
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-        });
-    });
-    
-    // Add CSS for ripple animation
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes ripple {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
-        }
-        
-        .skill-card i {
-            transition: transform 0.3s ease;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(20px);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: var(--shadow-lg);
-                padding: 30px 0;
-                z-index: 998;
-            }
-            
-            .nav-menu.active {
-                left: 0;
-            }
-            
-            .nav-menu li {
-                margin: 15px 0;
-            }
-            
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-            
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-            
-            html[lang="fa"] .nav-menu {
-                right: -100%;
-                left: auto;
-            }
-            
-            html[lang="fa"] .nav-menu.active {
-                right: 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-}
-
-// Copy to clipboard functionality
-function copyToClipboard(text, element) {
-    navigator.clipboard.writeText(text).then(() => {
-        showNotification(currentLanguage === 'en' ? 'Copied to clipboard!' : 'کپی شد!');
-    }).catch(() => {
-        // Fallback for older browsers
-        const textArea = document.createElement('textarea');
-        textArea.value = text;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        showNotification(currentLanguage === 'en' ? 'Copied to clipboard!' : 'کپی شد!');
-    });
-}
-
-// Show notification
-function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        background: var(--accent-color);
-        color: white;
-        padding: 15px 20px;
-        border-radius: 10px;
-        box-shadow: var(--shadow-lg);
-        z-index: 1001;
-        font-weight: 500;
-        animation: slideIn 0.3s ease;
-    `;
-    
-    if (currentLanguage === 'fa') {
-        notification.style.right = 'auto';
-        notification.style.left = '20px';
-    }
-    
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
-    }, 3000);
-}
-
-// Add notification animations
-const notificationStyle = document.createElement('style');
-notificationStyle.textContent = `
-    @keyframes slideIn {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    
-    @keyframes slideOut {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-    }
-    
-    html[lang="fa"] .notification {
-        animation: slideInRTL 0.3s ease;
-    }
-    
-    @keyframes slideInRTL {
-        from {
-            transform: translateX(-100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-`;
-document.head.appendChild(notificationStyle);
-
-// Keyboard navigation support
-document.addEventListener('keydown', function(e) {
-    // Toggle language with Ctrl/Cmd + L
-    if ((e.ctrlKey || e.metaKey) && e.key === 'l') {
-        e.preventDefault();
-        toggleLanguage();
-    }
-    
-    // Navigate sections with arrow keys
-    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-        const sections = Array.from(document.querySelectorAll('section[id]'));
-        const currentSection = sections.find(section => {
-            const rect = section.getBoundingClientRect();
-            return rect.top <= 100 && rect.bottom > 100;
-        });
-        
-        if (currentSection) {
-            const currentIndex = sections.indexOf(currentSection);
-            let nextIndex;
-            
-            if (e.key === 'ArrowDown' && currentIndex < sections.length - 1) {
-                nextIndex = currentIndex + 1;
-            } else if (e.key === 'ArrowUp' && currentIndex > 0) {
-                nextIndex = currentIndex - 1;
-            }
-            
-            if (nextIndex !== undefined) {
-                e.preventDefault();
-                sections[nextIndex].scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    }
-});
-
-// Smooth scrolling utility function
-function smoothScroll(target) {
-    const element = document.querySelector(target);
-    if (element) {
-        const offsetTop = element.offsetTop - 70; // Account for fixed nav
-        window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-        });
-    }
-}
-
-// Add touch-friendly interactions for mobile
-if ('ontouchstart' in window) {
-    document.body.classList.add('touch-device');
-    
-    // Add touch feedback for interactive elements
-    const touchElements = document.querySelectorAll('.btn, .skill-card, .contact-item, .social-link');
-    touchElements.forEach(element => {
-        element.addEventListener('touchstart', function() {
-            this.style.transform = 'scale(0.98)';
-        });
-        
-        element.addEventListener('touchend', function() {
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 100);
-        });
-    });
-}
-
-// Optimize performance
-function optimizePerformance() {
-    // Debounce scroll events
-    let scrollTimeout;
-    const originalScrollHandler = window.onscroll;
-    
-    window.addEventListener('scroll', function() {
-        if (scrollTimeout) {
-            cancelAnimationFrame(scrollTimeout);
-        }
-        
-        scrollTimeout = requestAnimationFrame(function() {
-            updateActiveNavLink();
-            addScrollEffects();
-        });
-    });
-}
-
-// Initialize performance optimizations
-optimizePerformance();
-
-// Add error handling
-window.addEventListener('error', function(e) {
-    console.log('Error detected:', e.error);
-    // Could implement user-friendly error notifications here
-});
-
-// Preload critical resources
-function preloadCriticalResources() {
-    // Preload fonts
-    const fontLinks = [
-        'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap',
-        'https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap'
-    ];
-    
-    fontLinks.forEach(href => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'style';
-        link.href = href;
-        document.head.appendChild(link);
-    });
-}
-
-// Initialize everything
-preloadCriticalResources();
