@@ -1,28 +1,41 @@
-# Personal Website — Next.js (App Router) + Tailwind + i18n (fa/en)
+# MBZ Personal Website
 
-- App Router with `[locale]` segment
-- RTL/LTR per-locale layout with correct `lang` and `dir`
-- Minimal pages: Home, About, Articles, Books, Videos
-- Tailwind styling, simple components (Navbar, LangSwitcher)
-- Middleware redirects `/` → `/fa`
-- `sitemap.ts` and `robots.txt` routes for SEO
+Professional bilingual personal website for Mohammad Bagher Zolfaghari.
 
-## Quick start
+## What is included
 
-```bash
-pnpm i # or npm i / yarn
-pnpm dev
+- Bilingual Persian and English website
+- RTL and LTR layout support
+- Home, About, Resume, Portfolio, Case Studies, Blog and Contact routes
+- Project detail pages
+- Case study detail pages
+- Blog article pages
+- Static admin panel at `/admin`
+- Local content editing and JSON export
+- Vercel-safe static build with `public` output directory
+
+## Admin
+
+URL: `/admin`
+
+Password:
+
+```txt
+mbz-admin
 ```
 
-Open http://localhost:3000 (redirects to /fa). Switch language with the button (EN/FA).
+The admin panel is a static CMS-lite panel. It stores changes in the browser and exports JSON. For public persistence, connect it to GitHub API, Supabase, Vercel KV or another database in a later version.
 
-## Deploy on Vercel
-- Import the repo in Vercel
-- Framework preset: **Next.js**
-- No special settings needed
-- Set your custom domain `mbzolfaghari.ir` to the project
+## Vercel settings
 
-## To customize
-- Edit content in `/app/[locale]/**`
-- Update Open Graph image at `/public/og.jpg`
-- Add real articles: create content pipeline or use CMS later
+Use these settings if Vercel asks:
+
+```txt
+Framework Preset: Other / Static
+Build Command: npm run build
+Install Command: npm install
+Output Directory: public
+Node.js: 20.x
+```
+
+This version intentionally avoids Next.js runtime dependencies to prevent the previous output-directory build failure.
