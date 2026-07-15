@@ -1,0 +1,10 @@
+const fs = require('fs');
+const path = require('path');
+const root = path.join(__dirname, '..');
+const publicDir = path.join(root, 'public');
+const source = path.join(root, 'index.html');
+const target = path.join(publicDir, 'index.html');
+if (!fs.existsSync(source)) throw new Error('index.html is missing');
+fs.mkdirSync(publicDir, { recursive: true });
+fs.copyFileSync(source, target);
+console.log('Static site ready. Output directory: public');
