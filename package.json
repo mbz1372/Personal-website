@@ -1,0 +1,13 @@
+{
+  "name": "mbzolfaghari-personal-website",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Professional bilingual personal website and static admin panel for Mohammad Bagher Zolfaghari.",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node scripts/dev.js"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
