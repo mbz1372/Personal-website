@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MBZ Admin Control Room</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&family=Vazirmatn:wght@400;600;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#f5f1e8;--paper:#fffdf8;--ink:#141312;--muted:#746f66;--line:rgba(20,19,18,.12);--gold:#b88a44;--r:34px}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0,rgba(184,138,68,.13),transparent 32%),var(--bg);color:var(--ink);font-family:'Vazirmatn',system-ui,sans-serif}.wrap{width:min(1100px,calc(100% - 32px));margin:auto;padding:34px 0 70px}.top{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:12px}.mark{width:54px;height:54px;border:1px solid var(--line);border-radius:18px;display:grid;place-items:center;font-family:'Inter';font-weight:900;letter-spacing:-.09em;background:var(--paper)}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:var(--ink);color:var(--bg);padding:12px 17px;text-decoration:none;font-weight:900}.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:0 24px 70px rgba(28,22,14,.08);margin:14px 0}h1{font-size:clamp(2.5rem,8vw,6rem);line-height:.96;letter-spacing:-.07em;margin:22px 0 12px}h2{font-size:clamp(1.5rem,4vw,2.4rem);letter-spacing:-.05em;margin:0 0 12px}p{color:var(--muted);line-height:2;font-weight:600}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.item{border:1px solid var(--line);background:#f8f3ea;border-radius:24px;padding:18px}.item strong{display:block;margin-bottom:8px}.code{direction:ltr;text-align:left;background:#141312;color:#f5f1e8;border-radius:22px;padding:18px;overflow:auto;white-space:pre-wrap;font-family:ui-monospace,Consolas,monospace}.pill{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:8px 10px;margin:4px;color:var(--muted);font-weight:900}@media(max-width:760px){.top{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}h1{font-size:3rem}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div class="brand"><span class="mark">MBZ</span><div><strong>Website Control Room</strong><p style="margin:3px 0 0">راهنمای مدیریت نسخه استاتیک رزومه/پورتفولیو</p></div></div>
+      <a class="btn" href="/">مشاهده سایت</a>
+    </header>
+
+    <section class="card">
+      <p class="pill">Static · Vercel Safe · No Database</p>
+      <h1>پنل سبک برای مدیریت محتوا</h1>
+      <p>این سایت عمداً استاتیک طراحی شده تا مثل نسخه پروداکشن فعلی روی Vercel بدون خطای build و بدون وابستگی اجرا شود. برای تغییر محتوا، داده‌های رزومه در فایل <b>script.js</b> قرار دارند و ظاهر در <b>styles.css</b> کنترل می‌شود.</p>
+    </section>
+
+    <section class="grid">
+      <article class="item"><strong>محتوای دو زبانه</strong><p>کل متن‌های فارسی و انگلیسی داخل آبجکت‌های <b>content</b> و <b>data</b> در script.js هستند.</p></article>
+      <article class="item"><strong>ساختار صفحه</strong><p>Hero، profile card، timeline، پروژه‌ها، کیس‌استادی و تماس داخل index.html تعریف شده‌اند.</p></article>
+      <article class="item"><strong>طراحی و UX</strong><p>پوسته رزومه، responsive، dark mode، print style و spacing داخل styles.css قرار دارد.</p></article>
+    </section>
+
+    <section class="card">
+      <h2>Deployment</h2>
+      <p>برای این نسخه build command لازم نیست. اگر Vercel تنظیمات قبلی داشت، بهترین حالت برای static deploy این است:</p>
+      <pre class="code">Framework Preset: Other
+Build Command: empty
+Install Command: empty
+Output Directory: .</pre>
+    </section>
+  </main>
+</body>
+</html>
