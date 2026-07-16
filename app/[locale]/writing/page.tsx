@@ -1,0 +1,6 @@
+import { notFound } from 'next/navigation'
+import { SiteShell } from '@/components/site-shell'
+import type { Locale } from '@/data/site'
+
+const posts=[{tag:'Product Ops',fa:'چرا محصول در کسب‌وکارهای عملیاتی بدون فهم SLA ناقص است؟',en:'Why product work in operational businesses is incomplete without SLA thinking'},{tag:'CRM',fa:'CRM خوب از فرم شروع نمی‌شود؛ از رفتار تیم شروع می‌شود',en:'A good CRM does not begin with forms; it begins with team behavior'},{tag:'TravelTech',fa:'سه شاخصی که کیفیت زنجیره تأمین هتل را نشان می‌دهد',en:'Three metrics that reveal hotel supply quality'}]
+export default async function WritingPage({params}:{params:Promise<{locale:string}>}){const {locale}=await params;if(locale!=='fa'&&locale!=='en')notFound();const l=locale as Locale;return <SiteShell locale={l}><main className="writing-page"><header><p className="section-kicker">Writing</p><h1>{l==='fa'?'یادداشت‌هایی درباره ساخت محصول در دنیای واقعی.':'Notes on building products in the real world.'}</h1></header><div className="post-list">{posts.map((p,i)=><article key={p.tag}><span>0{i+1}</span><div><small>{p.tag}</small><h2>{p[l]}</h2></div><b>↗</b></article>)}</div></main></SiteShell>}
