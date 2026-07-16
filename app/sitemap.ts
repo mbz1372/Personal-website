@@ -1,0 +1,3 @@
+import type { MetadataRoute } from 'next'
+import { projects } from '@/data/site'
+export default function sitemap(): MetadataRoute.Sitemap { const base='https://mbzolfaghari.ir'; return [{url:`${base}/fa`,priority:1},{url:`${base}/en`,priority:1},{url:`${base}/fa/writing`,priority:.7},{url:`${base}/en/writing`,priority:.7},...projects.flatMap(p=>([{url:`${base}/fa/work/${p.slug}`,priority:.8},{url:`${base}/en/work/${p.slug}`,priority:.8}]))] }
