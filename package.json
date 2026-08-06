@@ -1,6 +1,6 @@
 {
-  "name": "mbz-world-class-portfolio",
-  "version": "6.0.0",
+  "name": "mbz-international-product-portfolio",
+  "version": "7.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,9 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "^16.0.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "next": "16.2.12",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
@@ -19,6 +19,6 @@
     "typescript": "^5.8.0"
   },
   "engines": {
-    "node": ">=20.11.0"
+    "node": "22.x"
   }
 }
