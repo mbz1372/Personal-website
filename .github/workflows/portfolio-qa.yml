@@ -1,0 +1,45 @@
+name: Portfolio Browser QA
+on:
+  push:
+    branches:
+      - design/premium-portfolio-2026
+    paths:
+      - 'index.html'
+      - 'resume.html'
+      - 'articles.html'
+      - 'videos.html'
+      - 'profile.webp'
+      - 'portfolio-2026.css'
+      - 'portfolio-2026.js'
+      - 'resume-2026.css'
+      - 'scripts/qa-browser.mjs'
+      - '.github/workflows/portfolio-qa.yml'
+  pull_request:
+    branches:
+      - content/verified-profile-phase2
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-save --no-package-lock --no-audit --no-fund playwright@1.55.1 axe-core@4.10.3
+      - run: npx playwright install --with-deps chromium
+      - name: Start local static server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/mbz-http.log 2>&1 &
+          for i in $(seq 1 15); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep 1; done
+      - name: Test desktop, RTL, mobile, routes and production
+        run: node scripts/qa-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-qa-report
+          path: qa-output/
+          retention-days: 7
