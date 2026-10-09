@@ -29,3 +29,12 @@ footer{background:#0f2639;color:#c3d3dc;padding:25px 0}.footer-inner{display:fle
 .detail-inside strong{display:block;font-size:12px;color:var(--ink);margin-top:9px}
 .project-card .detail-inside p{font-size:12px;margin:7px 0 9px;line-height:1.85;color:var(--muted)}
 html[lang=fa] .project-card .detail-inside p{line-height:2}
+
+/* Persian headings must use the Persian typeface instead of a Latin fallback. */
+html[lang=fa] .hero h1,
+html[lang=fa] .section-title,
+html[lang=fa] .job h3,
+html[lang=fa] .project-card h3,
+html[lang=fa] .capability h3 {font-family:'Vazirmatn',sans-serif}
+.project-type,.tag{font-size:11px}
+@media(max-width:420px){.project-type,.tag{font-size:10.5px}}
