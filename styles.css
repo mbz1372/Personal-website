@@ -1349,3 +1349,61 @@ html[lang="fa"] .certification-card {
         page-break-inside: avoid;
     }
 }
+/* Phase 1: preserve the chosen visual baseline while fixing mobile RTL layout. */
+@media (min-width: 769px) {
+    html[lang="fa"] .nav-menu {
+        flex-direction: row;
+        margin-inline-start: auto;
+    }
+}
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-wrap: nowrap;
+        max-height: calc(100dvh - 70px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    .nav-menu.active { visibility: visible; pointer-events: auto; }
+    html[lang="fa"] .nav-menu {
+        flex-direction: column;
+        align-items: stretch;
+        padding-inline: 24px;
+    }
+    html[lang="fa"] .nav-menu li,
+    html[lang="fa"] .nav-menu a { text-align: right; }
+    html[lang="fa"] .nav-lang-toggle { margin: 12px 0 0; }
+    .hero-content,
+    html[lang="fa"] .hero-content {
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+    .hero-text,
+    html[lang="fa"] .hero-text {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+    .hero-title, .hero-name, .hero-description { max-width: 100%; }
+    html[lang="fa"] .hero-title,
+    html[lang="fa"] .hero-name,
+    html[lang="fa"] .hero-description {
+        direction: rtl;
+        unicode-bidi: plaintext;
+    }
+    .hero-buttons { flex-wrap: wrap; }
+}
+@media (max-width: 480px) {
+    .hero-content { padding-inline: 16px; gap: 24px; }
+    .hero-name { font-size: clamp(1.7rem, 7vw, 2rem); }
+    .hero-title { font-size: clamp(1rem, 4.4vw, 1.15rem); }
+    .hero-description { font-size: 0.96rem; }
+    .hero-stats { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .nav-menu { transition: none; }
+}
