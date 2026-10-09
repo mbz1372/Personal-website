@@ -38,3 +38,18 @@ html[lang=fa] .project-card h3,
 html[lang=fa] .capability h3 {font-family:'Vazirmatn',sans-serif}
 .project-type,.tag{font-size:11px}
 @media(max-width:420px){.project-type,.tag{font-size:10.5px}}
+
+/* QA 2026-10-09: fixes verified in real Chromium screenshots and scroll metrics. */
+.nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:43px;line-height:1.25;white-space:nowrap;flex:0 0 auto}
+.nav-cta svg{width:15px;height:15px;flex:0 0 15px}
+.trust-topics{min-width:0;max-width:100%}
+.footer-links a{min-height:42px;display:inline-flex;align-items:center}
+@media(max-width:700px){
+ .trust-inner{min-width:0}
+ .trust-topics{width:100%;flex-wrap:wrap;gap:8px;justify-content:center!important}
+ .trust-topics span{font-size:11px;line-height:1.5;white-space:nowrap;padding:8px 12px;background:#f1faf8;border:1px solid #dfefe9;border-radius:999px}
+}
+@media(max-width:420px){
+ .trust-topics{gap:7px}
+ .trust-topics span{font-size:10.5px;padding:7px 10px}
+}
