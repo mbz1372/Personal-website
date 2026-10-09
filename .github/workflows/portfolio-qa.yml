@@ -14,6 +14,9 @@ on:
       - 'resume-2026.css'
       - 'scripts/qa-browser.mjs'
       - '.github/workflows/portfolio-qa.yml'
+  pull_request:
+    branches:
+      - content/verified-profile-phase2
   workflow_dispatch:
 permissions:
   contents: read
