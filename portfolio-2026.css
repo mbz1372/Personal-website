@@ -53,3 +53,11 @@ html[lang=fa] .capability h3 {font-family:'Vazirmatn',sans-serif}
  .trust-topics{gap:7px}
  .trust-topics span{font-size:10.5px;padding:7px 10px}
 }
+
+/* WCAG AA contrast refinement: retain the blue/teal palette with readable ink. */
+:root{--green-ink:#087866}
+.kicker,.brand .dot{color:var(--green-ink)}
+.trust-inner p,.project-number{color:#526e7c}
+.job .job-note{color:#4e6574}
+.hero h1 span{background:linear-gradient(112deg,#2461da 5%,#087b70 95%);background-clip:text;-webkit-background-clip:text;color:transparent}
+.brand-mark,.btn-primary{background:linear-gradient(112deg,#255fce 5%,#087b70 95%)}
