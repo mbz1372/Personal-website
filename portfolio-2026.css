@@ -18,3 +18,14 @@ footer{background:#0f2639;color:#c3d3dc;padding:25px 0}.footer-inner{display:fle
 @media(max-width:700px){.container{padding:0 20px}.hero{padding:60px 0 67px}.hero-grid{grid-template-columns:1fr;gap:45px}.hero-copy{text-align:center}.hero-description{margin-inline:auto;text-align:center!important;font-size:14px}.hero h1{font-size:clamp(38px,8.5vw,58px);letter-spacing:-2.4px;margin-top:18px}.hero-role{font-size:17px}.hero-actions,.hero-points{justify-content:center}.portrait-wrap{max-width:310px}.portrait-stamp{display:flex;max-width:150px;padding:9px 11px}.portrait-stamp b{font-size:10px}.portrait-stamp small{font-size:9px}.portrait-stamp svg{width:18px}.stamp-left{inset-inline-start:-4%}.stamp-right{inset-inline-end:-5%}.trust-inner{flex-direction:column;align-items:center;text-align:center;gap:15px}.trust-topics{justify-content:center!important}section.content-section{padding:75px 0}.section-intro{align-items:start}.about-grid,.education,.project-grid{grid-template-columns:1fr}.about-panel,.capabilities{padding:25px}.job{padding:24px}.project-card{min-height:330px}.section-title{letter-spacing:-1.3px}.footer-inner{flex-direction:column;text-align:center}.job-head{flex-direction:column}}
 @media(max-width:420px){.container{padding:0 16px}.hero h1{font-size:clamp(35px,10vw,46px)}html[lang=fa] .hero h1{font-size:clamp(34px,9vw,43px)}.hero-points{gap:9px}.hero-points span{font-size:10px}.btn{padding:0 15px}.section-title{font-size:29px}.portrait-wrap{max-width:265px}.stamp-left{inset-inline-start:-2%}.stamp-right{inset-inline-end:-3%}.project-card{padding:24px}.job{padding:21px}.timeline-entry{gap:10px;grid-template-columns:30px 1fr}.timeline-dot{width:30px;height:30px}.timeline:before{inset-inline-start:14px}.contact-actions .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* Meaningful, keyboard accessible project disclosures. */
+.project-detail{margin:0 0 19px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:12px}
+.project-detail summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px;font-weight:800;color:var(--blue);padding:13px 1px;cursor:pointer}
+.project-detail summary::-webkit-details-marker{display:none}
+.project-detail summary span:last-child{font-size:20px;font-weight:400;line-height:1;transition:transform .2s}
+.project-detail[open] summary span:last-child{transform:rotate(45deg)}
+.detail-inside{padding:1px 0 15px}
+.detail-inside strong{display:block;font-size:12px;color:var(--ink);margin-top:9px}
+.project-card .detail-inside p{font-size:12px;margin:7px 0 9px;line-height:1.85;color:var(--muted)}
+html[lang=fa] .project-card .detail-inside p{line-height:2}
