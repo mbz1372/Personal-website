@@ -1411,3 +1411,39 @@ html[lang="fa"] .certification-card {
 /* Accessible hamburger button keeps the original icon styling. */
 .hamburger { appearance: none; border: 0; background: transparent; padding: 6px; color: inherit; }
 .hamburger:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 3px; border-radius: 6px; }
+
+/* Visual refinement: preserve the original gradient and minimal portfolio identity. */
+.hero-content { width: 100%; }
+.hero-text { min-width: 0; }
+.hero-name { letter-spacing: -0.025em; text-wrap: balance; }
+.hero-title { line-height: 1.45; text-wrap: pretty; }
+.hero-description { text-align: start; margin-inline: 0; max-width: 60ch; line-height: 1.85; }
+html[lang="fa"] .hero-name { letter-spacing: normal; line-height: 1.5; }
+html[lang="fa"] .hero-description { line-height: 2; }
+.hero-badge { max-width: 100%; line-height: 1.6; }
+.hero-badge span { overflow-wrap: break-word; }
+.hero-buttons .btn { min-height: 44px; }
+.nav-menu a:focus-visible, .nav-lang-btn:focus-visible, .btn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+@media (max-width: 768px) {
+    .hero-description, html[lang="fa"] .hero-description {
+        text-align: center;
+        margin-inline: auto;
+        max-width: 48ch;
+    }
+    .hero-badge { justify-content: center; margin-inline: auto; }
+    .hero-name { line-height: 1.35; }
+    .hero-title { line-height: 1.6; }
+}
+@media (max-width: 480px) {
+    .hero-badge { font-size: 0.78rem; padding: 8px 12px; }
+    .hero-description { line-height: 1.8; }
+    html[lang="fa"] .hero-description { line-height: 1.95; }
+    .hero-buttons { gap: 12px; }
+    .hero-stats { gap: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .floating-shape, .image-border, .typing-text::after { animation: none !important; }
+}
