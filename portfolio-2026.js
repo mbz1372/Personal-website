@@ -43,8 +43,8 @@
       const content = el.getAttribute('data-' + current);
       if (content !== null) el.textContent = content;
     });
-    document.title = pageCopy[current].title;
-    if (metaDescription) metaDescription.content = pageCopy[current].description;
+    document.title = document.querySelector('.sheet') ? (current === 'fa' ? 'رزومه — محمدباقر ذوالفقاری' : 'Resume — Mohammad Bagher Zolfaghari') : pageCopy[current].title;
+    if (metaDescription && !document.querySelector('.sheet')) metaDescription.content = pageCopy[current].description;
     if (langLabel) langLabel.textContent = current === 'fa' ? 'EN' : 'فا';
     if (langButton) langButton.setAttribute('aria-label', current === 'fa' ? 'Switch to English' : 'تغییر زبان به فارسی');
     setSavedLanguage(current);
