@@ -39,7 +39,18 @@ for(const size of viewports) {
         const css=getComputedStyle(el);
         return css.visibility!=='hidden' && css.display!=='none' && box.width>0 && box.height>0
       }).map(el=>({tag:el.tagName,text:el.textContent.trim().slice(0,35),width:Math.round(el.getBoundingClientRect().width),height:Math.round(el.getBoundingClientRect().height)}));
+      const overflowElements = [...document.querySelectorAll('body *')].map(el => {
+        const rect = el.getBoundingClientRect();
+        return {tag:el.tagName.toLowerCase(),className:typeof el.className==='string'?el.className.slice(0,90):'',text:(el.textContent||'').trim().slice(0,35),left:Math.round(rect.left),right:Math.round(rect.right),width:Math.round(rect.width)};
+      }).filter(el=>el.right>innerWidth+2 && el.width>0).sort((a,b)=>b.right-a.right).slice(0,12);
+      const navCta=document.querySelector('.nav-cta')?.getBoundingClientRect();
+      const trustLine=document.querySelector('.trust-topics')?.getBoundingClientRect();
       return {
+        overflowElements,
+        navCta:navCta?{width:Math.round(navCta.width),height:Math.round(navCta.height)}:null,
+        trustLine:trustLine?{width:Math.round(trustLine.width),right:Math.round(trustLine.right)}:null,
+        bodyFont:getComputedStyle(document.body).fontFamily,
+        paragraphFont:getComputedStyle(document.querySelector('.hero-description')).fontFamily,
         title:document.title,lang:document.documentElement.lang,dir:document.documentElement.dir,
         viewport:window.innerWidth,scrollWidth:w,overflow:w>window.innerWidth+2,
         sections:[...document.querySelectorAll('main section[id]')].map(el=>el.id),
@@ -110,6 +121,6 @@ try{
 await browser.close();
 await fs.writeFile(out+'/report.json',JSON.stringify(report,null,2),'utf8');
 console.log('=== QA REPORT BEGIN ===');
-console.log(JSON.stringify({timestamp:report.timestamp,production:report.production,problems:report.problems,scenarios:report.scenarios.map(x=>({id:x.id,http:x.httpStatus,lang:x.metrics.lang,dir:x.metrics.dir,overflow:x.metrics.overflow,portrait:x.metrics.portraitOk,menuOpen:x.menuOpen,menuClosed:x.menuClosed,errors:x.errors,broken:x.broken}))},null,2));
+console.log(JSON.stringify({timestamp:report.timestamp,production:report.production,problems:report.problems,scenarios:report.scenarios.map(x=>({id:x.id,http:x.httpStatus,lang:x.metrics.lang,dir:x.metrics.dir,overflow:x.metrics.overflow,overflowElements:x.metrics.overflowElements,navCta:x.metrics.navCta,trustLine:x.metrics.trustLine,bodyFont:x.metrics.bodyFont,portrait:x.metrics.portraitOk,menuOpen:x.menuOpen,menuClosed:x.menuClosed,errors:x.errors,broken:x.broken}))},null,2));
 console.log('=== QA REPORT END ===');
 if(report.problems.length)process.exitCode=1;
