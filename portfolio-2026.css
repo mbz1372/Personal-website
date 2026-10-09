@@ -61,3 +61,6 @@ html[lang=fa] .capability h3 {font-family:'Vazirmatn',sans-serif}
 .job .job-note{color:#4e6574}
 .hero h1 span{background:linear-gradient(112deg,#2461da 5%,#087b70 95%);background-clip:text;-webkit-background-clip:text;color:transparent}
 .brand-mark,.btn-primary{background:linear-gradient(112deg,#255fce 5%,#087b70 95%)}
+
+/* Editorial section numerals: decorative but still legible at WCAG large-text contrast. */
+.section-index{color:#778d99}
