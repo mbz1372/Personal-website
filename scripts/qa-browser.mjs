@@ -75,7 +75,7 @@ for(const size of viewports) {
       await page.addScriptTag({path:'node_modules/axe-core/axe.min.js'});
       const violations = await page.evaluate(async () => {
         const result = await window.axe.run(document, {runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});
-        return result.violations.map(v=>({id:v.id,impact:v.impact,description:v.help,nodeCount:v.nodes.length,samples:v.nodes.slice(0,2).map(n=>n.target.join(' '))}));
+        return result.violations.map(v=>({id:v.id,impact:v.impact,description:v.help,nodeCount:v.nodes.length,samples:v.nodes.slice(0,35).map(n=>({target:n.target.join(' '),message:n.failureSummary?.slice(0,220)}))}));
       });
       record.accessibilityViolations=violations;
       critical(id+' WCAG A/AA',violations.length===0,{violations});
