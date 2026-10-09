@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function toggleLanguage() {
     const newLanguage = currentLanguage === 'en' ? 'fa' : 'en';
     setLanguage(newLanguage);
+    document.querySelector('.nav-menu')?.classList.remove('active');
+    document.querySelector('.hamburger')?.classList.remove('active');
+    document.querySelector('.hamburger')?.setAttribute('aria-expanded', 'false');
 }
 
 // Set language function
@@ -109,42 +112,39 @@ function handleProfileImageLoading() {
 function initializeNavigation() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    // Hamburger menu toggle
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
+    if (!hamburger || !navMenu) return;
+
+    function closeMenu() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
     }
-    
-    // Close menu when clicking on links
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+    hamburger.addEventListener('click', () => {
+        const opened = navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active', opened);
+        hamburger.setAttribute('aria-expanded', String(opened));
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', event => {
+            const href = link.getAttribute('href');
+            closeMenu();
+            // Preserve normal navigation to articles and videos.
+            if (!href || !href.startsWith('#')) return;
+            const section = document.getElementById(href.slice(1));
+            if (!section) return;
+            event.preventDefault();
+            window.scrollTo({ top: section.offsetTop - 70, behavior: 'smooth' });
         });
     });
-    
-    // Smooth scroll to sections
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 70; // Account for fixed nav
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeMenu();
     });
-    
-    // Update active nav link on scroll
+    document.addEventListener('click', event => {
+        if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) closeMenu();
+    });
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) closeMenu();
+    });
     window.addEventListener('scroll', updateActiveNavLink);
 }
 
@@ -327,52 +327,7 @@ function initializeInteractiveElements() {
             transition: transform 0.3s ease;
         }
         
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                inset-inline: 0;
-                top: 70px;
-                flex-direction: column;
-                background-color: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(20px);
-                width: 100%;
-                text-align: center;
-                transition: transform 0.3s ease;
-                box-shadow: var(--shadow-lg);
-                padding: 30px 0;
-                z-index: 998;
-                transform: translateX(-100%);
-            }
 
-            .nav-menu.active {
-                transform: translateX(0);
-            }
-            
-            .nav-menu li {
-                margin: 15px 0;
-            }
-            
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-            
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-            
-            html[lang="fa"] .nav-menu {
-                inset-inline: 0;
-                transform: translateX(100%);
-            }
-
-            html[lang="fa"] .nav-menu.active {
-                transform: translateX(0);
-            }
-        }
     `;
     document.head.appendChild(style);
 }
