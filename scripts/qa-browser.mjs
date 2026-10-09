@@ -71,11 +71,21 @@ for(const size of viewports) {
       await page.keyboard.press('Escape');
       record.menuClosed=!(await page.locator('#site-nav').evaluate(el=>el.classList.contains('open')));
     }
+    if (size.name==='desktop' || size.name==='mobile') {
+      await page.addScriptTag({path:'node_modules/axe-core/axe.min.js'});
+      const violations = await page.evaluate(async () => {
+        const result = await window.axe.run(document, {runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}});
+        return result.violations.map(v=>({id:v.id,impact:v.impact,description:v.help,nodeCount:v.nodes.length,samples:v.nodes.slice(0,2).map(n=>n.target.join(' '))}));
+      });
+      record.accessibilityViolations=violations;
+      critical(id+' WCAG A/AA',violations.length===0,{violations});
+    }
     report.scenarios.push(record);
     critical(id+' http',response?.ok()===true,{status:response?.status()});
     critical(id+' language direction',metrics.lang===lang&&metrics.dir===(lang==='fa'?'rtl':'ltr'),{actual:metrics.lang+'/'+metrics.dir});
     critical(id+' horizontal overflow',!metrics.overflow,{scrollWidth:metrics.scrollWidth,viewport:metrics.viewport});
     critical(id+' portrait',metrics.portraitOk===true,{portraitOk:metrics.portraitOk});
+    critical(id+' expected typography',metrics.bodyFont.includes(lang==='fa'?'Vazirmatn':'DM Sans'),{font:metrics.bodyFont});
     critical(id+' js runtime',errors.filter(x=>!x.includes('fonts.googleapis.com')).length===0,{errors});
     critical(id+' local assets',broken.length===0,{broken});
     if(size.width<=768){
@@ -94,8 +104,10 @@ for(const which of ['resume.html','articles.html','videos.html','robots.txt','si
   if(!response?.ok())report.problems.push({name:'local route '+which,status});
   if(which==='resume.html'){
     const en=await page.locator('h1').textContent();
+    await page.pdf({path:out+'/resume-en.pdf',format:'A4',printBackground:true,preferCSSPageSize:true});
     await page.locator('#language-toggle').click();
     const fa=await page.locator('h1').textContent();
+    await page.pdf({path:out+'/resume-fa.pdf',format:'A4',printBackground:true,preferCSSPageSize:true});
     critical('resume bilingual toggle',en!==fa&&fa.includes('محمد'),{en,fa});
     const printValue=await page.evaluate(() => {const s=getComputedStyle(document.querySelector('.toolbar')); return s.display});
     recordNoop(printValue);
@@ -121,6 +133,6 @@ try{
 await browser.close();
 await fs.writeFile(out+'/report.json',JSON.stringify(report,null,2),'utf8');
 console.log('=== QA REPORT BEGIN ===');
-console.log(JSON.stringify({timestamp:report.timestamp,production:report.production,problems:report.problems,scenarios:report.scenarios.map(x=>({id:x.id,http:x.httpStatus,lang:x.metrics.lang,dir:x.metrics.dir,overflow:x.metrics.overflow,overflowElements:x.metrics.overflowElements,navCta:x.metrics.navCta,trustLine:x.metrics.trustLine,bodyFont:x.metrics.bodyFont,portrait:x.metrics.portraitOk,menuOpen:x.menuOpen,menuClosed:x.menuClosed,errors:x.errors,broken:x.broken}))},null,2));
+console.log(JSON.stringify({timestamp:report.timestamp,production:report.production,problems:report.problems,scenarios:report.scenarios.map(x=>({id:x.id,http:x.httpStatus,lang:x.metrics.lang,dir:x.metrics.dir,overflow:x.metrics.overflow,overflowElements:x.metrics.overflowElements,navCta:x.metrics.navCta,trustLine:x.metrics.trustLine,bodyFont:x.metrics.bodyFont,portrait:x.metrics.portraitOk,accessibilityViolations:x.accessibilityViolations,menuOpen:x.menuOpen,menuClosed:x.menuClosed,errors:x.errors,broken:x.broken}))},null,2));
 console.log('=== QA REPORT END ===');
 if(report.problems.length)process.exitCode=1;
