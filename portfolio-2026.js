@@ -43,7 +43,13 @@
       const content = el.getAttribute('data-' + current);
       if (content !== null) el.textContent = content;
     });
-    document.title = document.querySelector('.sheet') ? (current === 'fa' ? 'رزومه — محمدباقر ذوالفقاری' : 'Resume — Mohammad Bagher Zolfaghari') : pageCopy[current].title;
+    const page = document.body?.dataset.page || (document.querySelector('.sheet') ? 'resume' : 'home');
+    const titles = {
+      resume: current === 'fa' ? 'رزومه — محمدباقر ذوالفقاری' : 'Resume — Mohammad Bagher Zolfaghari',
+      articles: current === 'fa' ? 'یادداشت‌ها — محمدباقر ذوالفقاری' : 'Writing & Insights — MBZ',
+      videos: current === 'fa' ? 'ویدیوها — محمدباقر ذوالفقاری' : 'Videos & Explainers — MBZ'
+    };
+    document.title = titles[page] || pageCopy[current].title;
     if (metaDescription && !document.querySelector('.sheet')) metaDescription.content = pageCopy[current].description;
     if (langLabel) langLabel.textContent = current === 'fa' ? 'EN' : 'فا';
     if (langButton) langButton.setAttribute('aria-label', current === 'fa' ? 'Switch to English' : 'تغییر زبان به فارسی');
