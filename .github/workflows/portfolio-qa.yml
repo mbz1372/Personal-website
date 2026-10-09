@@ -29,7 +29,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install --no-save --no-package-lock --no-audit --no-fund playwright@1.55.1
+      - run: npm install --no-save --no-package-lock --no-audit --no-fund playwright@1.55.1 axe-core@4.10.3
       - run: npx playwright install --with-deps chromium
       - name: Start local static server
         run: |
